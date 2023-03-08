@@ -1,0 +1,15 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/MyFirstProjects/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
+				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/MyFirstProjects/Content/Levels/LevelDemo.umap",
+				"C:/Program Files/Epic Games/UE_5.1/Engine/Content/BasicShapes/Cube.uasset",
+				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/MyFirstProjects/Content/Levels/WorldLocal.umap"
+			]
+		}
+	]
+}
