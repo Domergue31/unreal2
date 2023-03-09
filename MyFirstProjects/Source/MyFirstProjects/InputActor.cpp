@@ -61,17 +61,20 @@ void AInputActor::BlowUp(float _axis)
 {
     if (_axis >= 1.0f)
     {
-        const FVector _result = FMath::VInterpConstantTo(scale, scale * 2, DELTATIME, blowUpSpeed);
-        SetActorLocation(_result);
+        BlowUp_Interp(GetActorScale(), scale * 2);
     }
     else if (_axis <= -1.0f)
     {
-        const FVector _result = FMath::VInterpConstantTo(scale, scale / 2, DELTATIME, blowUpSpeed);
-        SetActorLocation(_result);
+        BlowUp_Interp(GetActorScale(), scale / 2);
     }
     else
     {
-        const FVector _result = FMath::VInterpConstantTo(GetActorScale(), scale, DELTATIME, blowUpSpeed);
-        SetActorScale(_result);
+        BlowUp_Interp(GetActorScale(), scale);
     }
+}
+
+void AInputActor::BlowUp_Interp(FVector _from, FVector _to)
+{
+    const FVector _result = FMath::VInterpConstantTo(_from, _to, DELTATIME, blowUpSpeed);
+    SetActorScale3D(_result);
 }

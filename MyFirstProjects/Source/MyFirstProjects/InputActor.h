@@ -19,7 +19,7 @@ class MYFIRSTPROJECTS_API AInputActor : public AActor
 	UPROPERTY(EditAnywhere, Category = Movement, meta = (UIMin = 0, ClampMin = 0))
 		float rotaSpeed = 25;
 	UPROPERTY(EditAnywhere, Category = Movement, meta = (UIMin = 0, ClampMin = 0))
-		float blowUpSpeed = 0.5f;
+		float blowUpSpeed = 5;
 	UPROPERTY(EditAnywhere, Category = Scale)
 		FVector scale = FVector(0);
 		UPROPERTY(EditAnyWhere)
@@ -36,5 +36,6 @@ protected:
 	void SetVertical(float _axis);
 	void SetRotation(float _axis);
 	void BlowUp(float _axis);
+	void BlowUp_Interp(FVector _from, FVector _to);
 };
 
