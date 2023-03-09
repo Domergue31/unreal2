@@ -13,3 +13,4 @@
 #define HORIZONTAL "Horizontal"
 #define VERTICAL "Vertical"
 #define ROTATION "Rotation"
+#define BLOW_UP "BlowUp"

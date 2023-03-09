@@ -17,6 +17,7 @@ AInputActor::AInputActor()
 void AInputActor::BeginPlay()
 {
 	Super::BeginPlay();
+    scale = GetActorScale();
     SetUpInput();
 }
 
@@ -36,21 +37,41 @@ void AInputActor::SetUpInput()
     BIND_AXIS(HORIZONTAL, this, &AInputActor::SetHorizontal);
     BIND_AXIS(VERTICAL, this, &AInputActor::SetVertical);
     BIND_AXIS(ROTATION, this, &AInputActor::SetRotation);
+    BIND_AXIS(BLOW_UP, this, &AInputActor::BlowUp);
 }
 
 void AInputActor::SetHorizontal(float _axis)
 {
     const FVector _direction = GetActorRightVector().GetSafeNormal() * horizontalSpeed;
-    SetActorLocation(GetActorLocation() + (_direction * _axis * DELTATIME));
+    SetActorLocation(GetActorLocation() + (_direction * _axis * DELTATIME * horizontalSpeed));
 }
 
 void AInputActor::SetVertical(float _axis)
 {
     const FVector _direction = GetActorForwardVector().GetSafeNormal() * verticalSpeed;
-    SetActorLocation(GetActorLocation() + (_direction * _axis * DELTATIME));
+    SetActorLocation(GetActorLocation() + (_direction * _axis * DELTATIME * verticalSpeed));
 }
 
 void AInputActor::SetRotation(float _axis)
 {
-    AddActorLocalRotation(FRotator(0, rotateSpeed * _axis * DELTATIME, 0));
+    AddActorLocalRotation(FRotator(0, _axis * rotaSpeed * DELTATIME, 0));
+}
+
+void AInputActor::BlowUp(float _axis)
+{
+    if (_axis >= 1.0f)
+    {
+        const FVector _result = FMath::VInterpConstantTo(scale, scale * 2, DELTATIME, blowUpSpeed);
+        SetActorLocation(_result);
+    }
+    else if (_axis <= -1.0f)
+    {
+        const FVector _result = FMath::VInterpConstantTo(scale, scale / 2, DELTATIME, blowUpSpeed);
+        SetActorLocation(_result);
+    }
+    else
+    {
+        const FVector _result = FMath::VInterpConstantTo(GetActorScale(), scale, DELTATIME, blowUpSpeed);
+        SetActorScale(_result);
+    }
 }

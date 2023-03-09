@@ -13,14 +13,15 @@ class MYFIRSTPROJECTS_API AInputActor : public AActor
 
 
 		UPROPERTY(EditAnywhere, Category = Movement, meta = (UIMin = 0, ClampMin = 0))
-			float horizontalSpeed = 1;
+			float horizontalSpeed = 50;
 	UPROPERTY(EditAnywhere, Category = Movement, meta = (UIMin = 0, ClampMin = 0))
-			float verticalSpeed = 1;
+			float verticalSpeed = 50;
 	UPROPERTY(EditAnywhere, Category = Movement, meta = (UIMin = 0, ClampMin = 0))
-		float rotateSpeed = 1;
+		float rotaSpeed = 25;
 	UPROPERTY(EditAnywhere, Category = Movement, meta = (UIMin = 0, ClampMin = 0))
-		float rotationSpeed = 1;
-
+		float blowUpSpeed = 0.5f;
+	UPROPERTY(EditAnywhere, Category = Scale)
+		FVector scale = FVector(0);
 		UPROPERTY(EditAnyWhere)
 		TObjectPtr<UStaticMeshComponent> mesh = nullptr;
 	
@@ -34,4 +35,6 @@ protected:
 	void SetHorizontal(float _axis);
 	void SetVertical(float _axis);
 	void SetRotation(float _axis);
+	void BlowUp(float _axis);
 };
+
