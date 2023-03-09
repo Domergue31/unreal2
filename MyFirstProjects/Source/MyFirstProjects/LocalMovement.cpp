@@ -2,6 +2,7 @@
 
 #include "LocalMovement.h"
 #include "Utils.h"
+#include <Kismet/KismetMathLibrary.h>
 
 ALocalMovement::ALocalMovement()
 {
@@ -10,21 +11,23 @@ ALocalMovement::ALocalMovement()
     RootComponent = mesh;
     InitObject();
 }
-
 void ALocalMovement::InitObject()
 {
     mesh->SetStaticMesh(LoadObject<UStaticMesh>(this, TEXT("'/Engine/BasicShapes/Cube.Cube'")));
     mesh->SetMaterial(0, LoadObject<UMaterialInterface>(this, TEXT("'/Engine/VREditor/UI/DiscMaterial.DiscMaterial'")));
 }
 
-// Called when the game starts or when spawned
+
 void ALocalMovement::BeginPlay()
 {
     Super::BeginPlay();
     LOG_W(LogTemp, "w fwd %s / l fwd %s", *(FVector::UpVector).ToString(), *GetActorUpVector().ToString());
+    onTimerReached.AddDynamic(this, &ALocalMovement::EndTimer);
+    onTimerMove.AddDynamic(this, &ALocalMovement::MoveToAxe);
+    onTimerMove.AddDynamic(this, &ALocalMovement::ShowTimerBox);
+    onTimerMove.AddDynamic(this, &ALocalMovement::Rotate);
+    onTimerMove.AddDynamic(this, &ALocalMovement::Breath);
 }
-
-// Called every frame
 void ALocalMovement::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
@@ -52,6 +55,12 @@ void ALocalMovement::DebugAxis()
     DRAW_SPHERE(_location + _up * 100, 20, FColor::Blue, 2)
 }
 
+void ALocalMovement::ShowTimerBox()
+{
+    const FLinearColor _progressColor = UKismetMathLibrary::LinearColorLerp(FColor::Green, FColor::Red, GetTimerProgressNormalize());
+    DRAW_BOX(GetActorLocation() + FVector(0, 0, 100), (FVector(25) * GetTimerProgressNormalize()) + FVector(10), _progressColor.ToFColor(true), 2);
+}
+
 void ALocalMovement::UpdateTimer(float& _timer, const float& _maxTime)
 {
     if (!isStarted)
@@ -59,13 +68,12 @@ void ALocalMovement::UpdateTimer(float& _timer, const float& _maxTime)
     _timer += DELTATIME;
     if (_timer > _maxTime)
     {
-        _timer = 0;
-        isStarted = false;
+        onTimerReached.Broadcast(_timer);
         return;
     }
     else
     {
-        MoveToAxe();
+        onTimerMove.Broadcast();
     }
 }
 
@@ -94,4 +102,29 @@ void ALocalMovement::MoveToAxe()
         FVector _newLocation = _location + _up * 5 * speed;
         SetActorLocation(_newLocation);
     }
+}
+
+void ALocalMovement::Rotate()
+{
+    rotation += 1.0f;
+    if (rotation == 360.0f)
+        rotation = 0.0f;
+    FRotator _rotation = FRotator(0, rotation, 0);
+    SetActorRotation(_rotation * rotationSpeed);
+}
+
+void ALocalMovement::Breath()
+{
+    float _evolution = 0;
+    isGrowing = scale > maxScale ? false : scale < minScale ? true : isGrowing;
+    _evolution = isGrowing ? 0.1 : -0.1;
+    scale += _evolution * scaleSpeed;
+    FVector _scale = GetActorScale3D() + FVector(_evolution * scaleSpeed);
+    SetActorScale3D(_scale);
+}
+
+void ALocalMovement::EndTimer(float& _timer)
+{
+    _timer = 0;
+    isStarted = false;
 }

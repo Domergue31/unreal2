@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Kismet/KismetMathLibrary.h>
+
 #define LOG(log, msg, ...) UE_LOG(log, Display, TEXT(msg), __VA_ARGS__);
 #define LOG_W(log, msg, ...) UE_LOG(log, Warning, TEXT(msg), __VA_ARGS__);
 #define LOG_E(log, msg, ...) UE_LOG(log, Error, TEXT(msg), __VA_ARGS__);
@@ -29,3 +31,8 @@ DEFINE_LOG_CATEGORY(Thibaud)*/
     if (USE_DEBUG) DrawDebugLine(WORLD, start, end, color, false, -1.0f, 0, thick);
 #define DRAW_TEXT(loc, text, color, size)\
     if (USE_DEBUG) DrawDebugString(WORLD, loc, text, nullptr, color,DELTATIME, false, size);
+
+#define LERP_COLOR(from, to, t) UKismetMathLibrary::LinearColorLerp(from, to, t).ToFColor(true);
+
+typedef FColor C;
+typedef FVector Vec;
