@@ -5,6 +5,11 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/MyFirstProjects/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
+				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/MyFirstProjects/Content/Levels/LevelDemo.umap",
+				"C:/Program Files/Epic Games/UE_5.1/Engine/Content/BasicShapes/Cube.uasset",
+				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/MyFirstProjects/Content/Levels/WorldLocal.umap",
+				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/MyFirstProjects/Content/Levels/SpaceShip.umap",
 				"D:/UE_Projects/MyFirstProjects/Content/Levels/WorldLocal.umap",
 				"D:/UE_5.1/Engine/Content/BasicShapes/Cube.uasset",
 				"D:/UE_Projects/MyFirstProjects/Content/Levels/Controls.umap",
@@ -17,11 +22,7 @@
 				"D:/UE_Projects/MyFirstProjects/Content/Meshes/SpaceShip/Texture/00_BaseColor_Merged.uasset",
 				"D:/UE_Projects/MyFirstProjects/Content/Meshes/SpaceShip/Material__31_026.uasset",
 				"D:/UE_Projects/MyFirstProjects/Content/Meshes/SpaceShip/Material__31_026_Inst.uasset",
-				"D:/UE_Projects/MyFirstProjects/Content/Levels/SpaceShip.umap",
-				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/MyFirstProjects/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
-				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/MyFirstProjects/Content/Levels/LevelDemo.umap",
-				"C:/Program Files/Epic Games/UE_5.1/Engine/Content/BasicShapes/Cube.uasset",
-				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/MyFirstProjects/Content/Levels/WorldLocal.umap"
+				"D:/UE_Projects/MyFirstProjects/Content/Levels/SpaceShip.umap"
 			]
 		}
 	]

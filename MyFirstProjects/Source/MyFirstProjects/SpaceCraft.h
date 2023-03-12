@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Planet.h"
 #include "SpaceCraft.generated.h"
 
 UCLASS()
@@ -11,19 +12,26 @@ class MYFIRSTPROJECTS_API ASpaceCraft : public AActor
 {
 	GENERATED_BODY()
 
-		UPROPERTY(EditAnywhere, Category = Movement, meta = (UIMin = 0, ClampMin = 0))
-		float forwardSpeed = 50;
-	UPROPERTY(EditAnywhere, Category = Movement, meta = (UIMin = 0, ClampMin = 0))
-		float towardSpeed = 50;
-	UPROPERTY(EditAnywhere, Category = Movement, meta = (UIMin = 0, ClampMin = 0))
-		float rotationSpeed = 25;
+		DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnMove);
+
+	UPROPERTY(EditAnywhere, Category = "Space|Speed", meta = (UIMin = 0, ClampMin = 0))
+		float forwardSpeed = 200;
+	UPROPERTY(EditAnywhere, Category = "Space|Speed", meta = (UIMin = 0, ClampMin = 0))
+		float rotationSpeed = 150;
+	UPROPERTY(EditAnywhere, Category = "Space|Speed", meta = (UIMin = 0, ClampMin = 0, UIMax = 5, ClampMax = 5))
+		float towardRotationSpeed = 2.0f;
 
 
 	FRotator initRotation;
 	FVector initLocation;
 
-		UPROPERTY(EditAnywhere, Category = Space)
+	UPROPERTY(EditAnywhere, Category = "Space")
 		TArray<TObjectPtr<AActor>> planets = {};
+
+		UPROPERTY()
+		TArray<FVector> planetsScale = {};
+
+		FOnMove onMove;
 
 	UPROPERTY(EditAnywhere)
 		TObjectPtr<UStaticMeshComponent> mesh = nullptr;
@@ -33,11 +41,17 @@ public:
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
+
 	void SetUpInput();
 	void MoveForward(float _axis);
 	void MoveToward(float _axis);
 	void PitchRotation(float _axis);
 	void RollRotation(float _axis);
+	void TowardRotation_Interp(FRotator _from, FRotator _to, float _speed, float _axis);
+	void Respawn();
+	void ResetRotation();
+
 	void ShowDebug();
-	//void Rotation_Interp(FRotator _from, FRotator _to);
+	void InitPlanetsScale(const FVector& _location);
+	UFUNCTION() void SetPlanetScale();
 };

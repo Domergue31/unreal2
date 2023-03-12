@@ -2,6 +2,7 @@
 
 
 #include "Planet.h"
+#include "Utils.h"
 
 // Sets default values
 APlanet::APlanet()
@@ -11,7 +12,7 @@ APlanet::APlanet()
 	mesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
 	RootComponent = mesh;
 	mesh->SetStaticMesh(LoadObject<UStaticMesh>(this, TEXT("'/Engine/BasicShapes/Sphere.Sphere'")));
-	mesh->SetMaterial(0, LoadObject<UMaterialInterface>(this, TEXT("'/Game/StarterContent/Materials/M_Ground_Grass")));
+	mesh->SetMaterial(0, LoadObject<UMaterialInterface>(this, TEXT("'/Game/StarterContent/Materials/M_Concrete_Grim")));
 
 }
 
@@ -19,7 +20,6 @@ APlanet::APlanet()
 void APlanet::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -28,4 +28,5 @@ void APlanet::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+
 

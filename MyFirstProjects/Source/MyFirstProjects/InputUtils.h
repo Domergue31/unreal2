@@ -18,3 +18,4 @@
 #define BLOW_UP "BlowUp"
 #define SCALE "Scale"
 #define RESPAWN "Respawn"
+#define RESETROTATION "ResetRotation"
