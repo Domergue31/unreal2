@@ -19,3 +19,4 @@
 #define SCALE "Scale"
 #define RESPAWN "Respawn"
 #define RESETROTATION "ResetRotation"
+#define VIEW "View"

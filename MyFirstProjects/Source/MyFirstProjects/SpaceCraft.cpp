@@ -35,7 +35,7 @@ void ASpaceCraft::SetUpInput()
 {
 	BIND_AXIS(VERTICAL, this, &ASpaceCraft::MoveForward)
 	BIND_AXIS(HORIZONTAL, this, &ASpaceCraft::MoveToward)
-	BIND_AXIS(PITCHROTATION, this, &ASpaceCraft::PitchRotation)
+	BIND_AXIS(PITCHROTATION, this, &ASpaceCraft::MoveUp)
 	BIND_AXIS(ROLLROTATION, this, &ASpaceCraft::RollRotation)
 	BIND_ACTION(RESPAWN, EInputEvent::IE_Pressed, this, &ASpaceCraft::Respawn)
 	BIND_ACTION(RESETROTATION, EInputEvent::IE_Pressed, this, &ASpaceCraft::ResetRotation)
@@ -45,9 +45,25 @@ void ASpaceCraft::SetUpInput()
 
 void ASpaceCraft::MoveForward(float _axis)
 {
-	FVector _result = GetActorRightVector().GetSafeNormal();
-	SetActorLocation(GetActorLocation() + (_result * _axis * DELTATIME * forwardSpeed));
-	onMove.Broadcast();
+	FVector _result = GetActorForwardVector().GetSafeNormal();
+	if (_axis == 0)
+	{
+		velocity = FMath::Lerp(velocity, .0f, DELTATIME * 2);
+		SetActorLocation(GetActorLocation() + (_result * 1.0f * DELTATIME * velocity));
+		onMove.Broadcast();
+	}
+	else if (_axis > 0)
+	{
+		velocity = velocity < forwardSpeed ? forwardSpeed : velocity + accelerationSpeed;
+		SetActorLocation(GetActorLocation() + (_result * _axis * DELTATIME * velocity));
+		onMove.Broadcast();
+	}
+	else
+	{
+		velocity = 0.0f;
+		SetActorLocation(GetActorLocation() + (_result * _axis * DELTATIME * forwardSpeed));
+		onMove.Broadcast();
+	}
 }
 
 void ASpaceCraft::MoveToward(float _axis)
@@ -55,34 +71,36 @@ void ASpaceCraft::MoveToward(float _axis)
 	FRotator _actualRotation = GetActorRotation();
 	if (_axis >= 1.0f)
 	{
-		TowardRotation_Interp(_actualRotation, FRotator(75, _actualRotation.Yaw, _actualRotation.Roll), towardRotationSpeed, _axis);
+		TowardRotation_Interp(_actualRotation, FRotator(_actualRotation.Pitch, _actualRotation.Yaw, 75), towardRotationSpeed, _axis);
 	}
 	else if (_axis <= -1.0f)
 	{
-		TowardRotation_Interp(_actualRotation, FRotator(-75, _actualRotation.Yaw, _actualRotation.Roll), towardRotationSpeed, _axis);
+		TowardRotation_Interp(_actualRotation, FRotator(_actualRotation.Pitch, _actualRotation.Yaw, -75), towardRotationSpeed, _axis);
 	}
 	else
 	{
-		TowardRotation_Interp(_actualRotation, FRotator(initRotation.Pitch, _actualRotation.Yaw, _actualRotation.Roll), towardRotationSpeed * 2, _axis);
+		TowardRotation_Interp(_actualRotation, FRotator(_actualRotation.Pitch, _actualRotation.Yaw, initRotation.Roll), towardRotationSpeed * 2, _axis);
 	}
 }
 
-void ASpaceCraft::PitchRotation(float _axis)
+void ASpaceCraft::MoveUp(float _axis)
 {
-	SetActorRotation(GetActorRotation() + FRotator(0, 0, (_axis * -1) * rotationSpeed * DELTATIME));
+	FVector _result = GetActorUpVector().GetSafeNormal();
+	SetActorLocation(GetActorLocation() + (_result * _axis * DELTATIME * forwardSpeed));
+	//SetActorRotation(GetActorRotation() + FRotator(0, 0, (_axis * -1) * rotationSpeed * DELTATIME));
 }
 
 void ASpaceCraft::RollRotation(float _axis)
 {
-	SetActorRotation(GetActorRotation() + FRotator(0, _axis * rotationSpeed * DELTATIME, 0));
+	SetActorRotation(GetActorRotation() + FRotator(_axis * rotationSpeed * DELTATIME,0,0));
 }
 
 void ASpaceCraft::TowardRotation_Interp(FRotator _from, FRotator _to, float _speed, float _axis)
 {
-	if (_from.Pitch != _to.Pitch)
+	if (_from.Roll != _to.Roll)
 	{
-		const float _newPitch = FMath::Lerp(_from.Pitch, _to.Pitch, DELTATIME * _speed);
-		const FRotator _newRotation = FRotator(_newPitch, _from.Yaw, _from.Roll);
+		const float _newRoll = FMath::Lerp(_from.Roll, _to.Roll, DELTATIME * _speed);
+		const FRotator _newRotation = FRotator(_from.Pitch, _from.Yaw, _newRoll);
 		SetActorRotation(_newRotation);
 		RollRotation(_axis);
 	}
@@ -131,3 +149,4 @@ void ASpaceCraft::SetPlanetScale()
 		planets[i]->SetActorScale3D(FVector(_scale));
 	}
 }
+

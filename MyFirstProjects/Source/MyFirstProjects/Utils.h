@@ -34,5 +34,9 @@ DEFINE_LOG_CATEGORY(Thibaud)*/
 
 #define LERP_COLOR(from, to, t) UKismetMathLibrary::LinearColorLerp(from, to, t).ToFColor(true);
 
+#define TO_CHAR(string) *string
+#define TO_STRING(notString) notString.ToString()
+#define TO_CHAR_STR(text) TO_CHAR(TO_STRING(text))
+
 typedef FColor C;
 typedef FVector Vec;

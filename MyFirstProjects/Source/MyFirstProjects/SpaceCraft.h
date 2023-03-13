@@ -21,6 +21,11 @@ class MYFIRSTPROJECTS_API ASpaceCraft : public AActor
 	UPROPERTY(EditAnywhere, Category = "Space|Speed", meta = (UIMin = 0, ClampMin = 0, UIMax = 5, ClampMax = 5))
 		float towardRotationSpeed = 2.0f;
 
+	UPROPERTY(VisibleAnywhere, Category = "Space|Speed")
+		float velocity = 0.0f;
+	UPROPERTY(EditAnywhere, Category = "Space|Speed", meta = (UIMin = 0, ClampMin = 0))
+		float accelerationSpeed = 3;
+
 
 	FRotator initRotation;
 	FVector initLocation;
@@ -45,7 +50,7 @@ protected:
 	void SetUpInput();
 	void MoveForward(float _axis);
 	void MoveToward(float _axis);
-	void PitchRotation(float _axis);
+	void MoveUp(float _axis);
 	void RollRotation(float _axis);
 	void TowardRotation_Interp(FRotator _from, FRotator _to, float _speed, float _axis);
 	void Respawn();
