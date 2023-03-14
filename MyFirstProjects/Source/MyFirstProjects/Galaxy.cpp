@@ -15,7 +15,7 @@ AGalaxy::AGalaxy()
 
 
 void AGalaxy::InitGalaxy(ASpaceCraftCorrection* _ship)
-{
+{	
 	currentShip = _ship;
 	for (APlanetCorrection* _planet : allPlanets)
 	{
