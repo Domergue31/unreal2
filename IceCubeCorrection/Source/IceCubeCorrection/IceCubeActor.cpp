@@ -39,6 +39,8 @@ void AIceCubeActor::InitIceCube()
 	BindInput();
 	WORLD->GetFirstPlayerController()->SetViewTarget(this);
 	settings.initSize = GetActorScale();
+	if (movement)
+		movement->OnResetMovement().AddDynamic(this, &AIceCubeActor::ResetIceSizeBehaviour);
 }
 
 void AIceCubeActor::BindInput()
@@ -47,6 +49,7 @@ void AIceCubeActor::BindInput()
 	BIND_AXIS(HORIZONTAL, movement.Get(), &UActorMovementCorrComponent::MoveHorizontal);
 	BIND_AXIS(ROTATE, movement.Get(), &UActorMovementCorrComponent::Rotate);
 	BIND_ACTION(RESET, EInputEvent::IE_Pressed, movement.Get(), &UActorMovementCorrComponent::CallReset);
+	BIND_ACTION(RESET, EInputEvent::IE_Pressed, this, &AIceCubeActor::StartResetIce);
 }
 
 void AIceCubeActor::ScaleBehaviour()
@@ -56,4 +59,14 @@ void AIceCubeActor::ScaleBehaviour()
 	movement->UpdateForwardWeight( 1 - settings.ScaleRatio() + 0.1f);
 	movement->UpdateHorizontalWeight(1 - settings.ScaleRatio() + 0.1f);
 	movement->UpdateRotateWeight(1 - settings.ScaleRatio() + 0.1f);
+}
+
+void AIceCubeActor::ResetIceSizeBehaviour(float _scale)
+{
+	settings.ResetScale(this, _scale);
+}
+
+void AIceCubeActor::StartResetIce()
+{
+	settings.startScale = GetActorScale();
 }

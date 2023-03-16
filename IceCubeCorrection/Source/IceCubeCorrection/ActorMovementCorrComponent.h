@@ -67,7 +67,7 @@ class ICECUBECORRECTION_API UActorMovementCorrComponent : public UActorComponent
 
 public:	
 	UActorMovementCorrComponent();
-	FORCEINLINE FOnResetMovement OnResetMoveent() { return onResetMovement; }
+	FORCEINLINE FOnResetMovement& OnResetMovement() { return onResetMovement; }
 	FORCEINLINE FVector GetVelocity() const
 	{
 		return GetOwner()->GetActorForwardVector() * settings.forwardAxis + GetOwner()->GetActorRightVector() * settings.horizontalAxis;

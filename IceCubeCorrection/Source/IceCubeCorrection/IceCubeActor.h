@@ -17,6 +17,7 @@ struct FIceCubeSettings
 
 public:
 	FVector initSize = FVector(1);
+	FVector startScale;
 
 	UPROPERTY(EditAnywhere, meta = (UIMin = 0, ClampMin = 0))
 		float divideSizeBy = 3;
@@ -40,6 +41,11 @@ public:
 	FORCEINLINE void UpdateScale(AActor* _target)
 	{
 		_target->SetActorScale3D(FMath::Lerp(initSize, TargetSize(), ScaleRatio()));
+	}
+	FORCEINLINE void ResetScale(AActor* _target, float _factor)
+	{
+		currentTime = 0;
+		_target->SetActorScale3D(FMath::Lerp(startScale, initSize, _factor));
 	}
 };
 
@@ -71,5 +77,7 @@ protected:
 	void BindInput();
 
 	void ScaleBehaviour();
+	UFUNCTION() void ResetIceSizeBehaviour(float _scale);
+	void StartResetIce();
 
 };

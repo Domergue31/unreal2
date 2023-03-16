@@ -17,5 +17,6 @@
 #define VERTICAL "Vertical"
 #define ROTATIONYAW "RotationYaw"
 #define RESPAWN "Respawn"
+#define ROTATEPITCH "RotatePitch"
 #define ROTATE "Rotate"
 #define RESET "Reset"

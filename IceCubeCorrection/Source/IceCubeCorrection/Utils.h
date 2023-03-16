@@ -18,6 +18,7 @@ DECLARE_LOG_CATEGORY_EXTERN(Thibaud, Log, All)
 DEFINE_LOG_CATEGORY(Thibaud)*/
 
 #define WORLD GetWorld()
+#define PAWN WORLD->GetFirstPlayerController()->GetPawn()
 #define DELTATIME WORLD->DeltaTimeSeconds
 
 #define USE_DEBUG 1
