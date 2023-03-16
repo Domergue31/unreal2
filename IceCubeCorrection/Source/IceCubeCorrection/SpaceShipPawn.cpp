@@ -45,7 +45,7 @@ void ASpaceShipPawn::MoveForward(float _axis)
 {
 	settings.fwdAxis = LERP(settings.fwdAxis, FMath::Abs(_axis), DELTATIME * settings.fwdWeight);
 	settings.shipVelocity = GetActorForwardVector() * settings.fwdAxis;
-	AddMovementInput(settings.shipVelocity * 1.1);
+	AddMovementInput(settings.shipVelocity);
 }
 
 void ASpaceShipPawn::RotatePitch(float _axis)

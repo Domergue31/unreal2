@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 #include "LitleSpaceShip.generated.h"
 
 USTRUCT()
@@ -30,8 +32,12 @@ class ICECUBECORRECTION_API ALitleSpaceShip : public AActor
 {
 	GENERATED_BODY()
 
-		UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere)
 		TObjectPtr<UStaticMeshComponent> mesh = nullptr;
+	UPROPERTY(EditAnywhere)
+		TObjectPtr<UCameraComponent> camera = nullptr;
+	UPROPERTY(EditAnywhere)
+		TObjectPtr<USpringArmComponent> springArm = nullptr;
 
 	UPROPERTY(EditAnywhere)
 		FPosition position;
@@ -45,4 +51,5 @@ protected:
 	void InitPosition();
 	void ShowDebug();
 	void FollowThePawn();
+	void SetRotation();
 };

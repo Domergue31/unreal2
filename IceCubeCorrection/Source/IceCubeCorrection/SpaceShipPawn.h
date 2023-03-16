@@ -30,7 +30,7 @@ struct FSpaceShipMovementSettings
 		float rotateWeight = 2;
 
 	UPROPERTY(EditAnywhere)
-		float rotaSpeed = 10;
+		float rotaSpeed = 15;
 	UPROPERTY(EditAnywhere)
 		float pitchSpeed = 5;
 };
