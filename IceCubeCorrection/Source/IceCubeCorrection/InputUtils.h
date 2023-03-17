@@ -20,3 +20,7 @@
 #define ROTATEPITCH "RotatePitch"
 #define ROTATE "Rotate"
 #define RESET "Reset"
+#define UP "Up"
+#define DOWN "Down"
+#define RIGHT "Right"
+#define LEFT "Left"

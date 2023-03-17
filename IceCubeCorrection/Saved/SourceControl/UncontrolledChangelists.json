@@ -5,16 +5,12 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/IceCubeCorrection/Content/BluePrints/LitleSpaceShip.uasset",
-				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/IceCubeCorrection/Content/Level/Pawn.umap",
 				"D:/UE_Projects/IceCubeCorrection/Content/Level/IceCubeCorection.umap",
 				"D:/UE_Projects/IceCubeCorrection/Content/Materials/NewMaterial.uasset",
 				"D:/UE_Projects/IceCubeCorrection/Content/Materials/iceCube.uasset",
 				"D:/UE_Projects/IceCubeCorrection/Content/Materials/NewMaterial_Inst.uasset",
 				"D:/UE_Projects/IceCubeCorrection/Content/Level/Pawn.umap",
-				"D:/UE_Projects/IceCubeCorrection/Content/MyMyFirstGM.uasset",
 				"D:/UE_Projects/IceCubeCorrection/Content/BluePrints/MyMyFirstGM.uasset",
-				"D:/UE_Projects/IceCubeCorrection/Content/BluePrints/FirstPawn.uasset",
 				"D:/UE_Projects/IceCubeCorrection/Content/BluePrints/FirstPawnBP.uasset",
 				"D:/UE_Projects/IceCubeCorrection/Content/Meshes/source.uasset",
 				"D:/UE_Projects/IceCubeCorrection/Content/Meshes/Texture/00_Metalness_Merged.uasset",
@@ -23,11 +19,18 @@
 				"D:/UE_Projects/IceCubeCorrection/Content/Meshes/Texture/00_Roughness_Merged.uasset",
 				"D:/UE_Projects/IceCubeCorrection/Content/Meshes/Texture/00_BaseColor_Merged.uasset",
 				"D:/UE_Projects/IceCubeCorrection/Content/Meshes/Texture/00_Emissive_merged.uasset",
-				"D:/UE_Projects/IceCubeCorrection/Content/Meshes/Material__31_026.uasset",
 				"D:/UE_Projects/IceCubeCorrection/Content/Materials/Material__31_026.uasset",
 				"D:/UE_Projects/IceCubeCorrection/Content/Meshes/Material__31_026_Inst.uasset",
 				"D:/UE_Projects/IceCubeCorrection/Content/SpaceShipPawn.uasset",
-				"D:/UE_Projects/IceCubeCorrection/Content/BluePrints/SpaceShipPawn.uasset"
+				"D:/UE_Projects/IceCubeCorrection/Content/BluePrints/SpaceShipPawn.uasset",
+				"D:/UE_Projects/IceCubeCorrection/Content/BluePrints/MyShipCorrectionPawn.uasset",
+				"D:/UE_Projects/IceCubeCorrection/Content/BluePrints/FollowerObjectActor.uasset",
+				"D:/UE_Projects/IceCubeCorrection/Content/Level/Grid.umap",
+				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/IceCubeCorrection/Content/BluePrints/LitleSpaceShip.uasset",
+				"C:/Users/thibd/OneDrive/Documents/Unreal Projects/IceCubeCorrection/Content/Level/Pawn.umap",
+				"D:/UE_Projects/IceCubeCorrection/Content/MyMyFirstGM.uasset",
+				"D:/UE_Projects/IceCubeCorrection/Content/BluePrints/FirstPawn.uasset",
+				"D:/UE_Projects/IceCubeCorrection/Content/Meshes/Material__31_026.uasset"
 			]
 		}
 	]
