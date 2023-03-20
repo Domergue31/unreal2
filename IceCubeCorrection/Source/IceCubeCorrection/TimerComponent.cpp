@@ -33,8 +33,8 @@ void UTimerComponent::UpdateTimer(float& _timer, const float& _max)
 {
 	if (!isStarted)
 		return;
+	LOG_W(LogTemp, "%f", _timer);
 	_timer += DELTATIME;
-	LOG_W(LogTemp, "%f", _timer)
 	if (_timer >= _max)
 	{
 		onTimerEnd.Broadcast();

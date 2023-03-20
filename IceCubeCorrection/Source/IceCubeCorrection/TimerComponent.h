@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Utils.h"
 #include "TimerComponent.generated.h"
 
 
@@ -18,15 +19,20 @@ class ICECUBECORRECTION_API UTimerComponent : public UActorComponent
 	UPROPERTY(EditAnywhere, Category = Timer, meta = (UIMin = 0, ClampMin = 0))
 		float maxTimer = 5;
 
-	bool isStarted = false;
+	UPROPERTY(VisibleAnywhere)
+		bool isStarted = false;
 	UPROPERTY(VisibleAnywhere)
 		float timer;
 
 public:	
 	UTimerComponent();
 	FORCEINLINE FOnTimerEnd& OnTimerEnd() { return onTimerEnd; }
-	FORCEINLINE void StartTimer() { isStarted = true; }
+	FORCEINLINE void StartTimer() 
+	{ 
+		isStarted = true;
+	}
 	FORCEINLINE void Stoptimer() { isStarted = false; }
+	FORCEINLINE void SetMaxTimer(float _value) { maxTimer = _value; }
 	UFUNCTION() void ResetTimer();
 protected:
 	virtual void BeginPlay() override;
