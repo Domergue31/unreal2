@@ -6,12 +6,17 @@
 #include "GameFramework/Character.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "FollowerComponent.h"
 #include "MainCharacter.generated.h"
 
 UCLASS()
 class CHARACTERFLLOWINGEX_API AMainCharacter : public ACharacter
 {
 	GENERATED_BODY()
+		DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMoveForward, float, _axis);
+
+	UPROPERTY(EditAnywhere, BlueprintCallable, BlueprintAssignable, meta = (AllowPrivateAccess))
+	FOnMoveForward onMoveForward;
 
 	UPROPERTY(EditAnywhere)
 		TObjectPtr<UCameraComponent> camera = nullptr;
@@ -19,13 +24,22 @@ class CHARACTERFLLOWINGEX_API AMainCharacter : public ACharacter
 		TObjectPtr<USpringArmComponent> arm = nullptr;
 
 	UPROPERTY(EditAnywhere)
+		TObjectPtr<UFollowerComponent> follow = nullptr;
+
+	UPROPERTY(EditAnywhere)
 		TObjectPtr<AMainCharacter> follower = nullptr;
 	UPROPERTY(EditAnywhere)
-		bool isFollowing = false;
+		bool isPossess = true;
 
 public:
 	AMainCharacter();
-
+	FORCEINLINE FOnMoveForward& OnMoveForward() { return onMoveForward; }
+	FORCEINLINE void SetIsPossessEnable() 
+	{
+		isPossess = true;
+		GetWorld()->GetFirstPlayerController()->Possess(this);
+	}
+	FORCEINLINE bool GetIsPossess() { return isPossess; }
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
