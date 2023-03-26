@@ -7,19 +7,9 @@
 #include "Camera/CameraComponent.h"
 #include "Gameframework/SpringArmComponent.h"
 #include "TridusSpell.h"
+#include "StarfishSpell.h"
 #include "SorcererCharacter.generated.h"
 
-
-USTRUCT()
-struct FSpellSettings
-{
-	GENERATED_BODY()
-	UPROPERTY(EditAnywhere)
-		TSubclassOf<ATridusSpell> tridus = nullptr;
-	UPROPERTY(EditAnywhere)
-		float TridusCoolDown = 2.0f;
-
-};
 
 
 UCLASS()
@@ -36,9 +26,14 @@ class FIREBALLPROJECT_API ASorcererCharacter : public ACharacter
 
 	UPROPERTY(EditAnywhere, BlueprintCallable, BlueprintAssignable, meta = (AllowPrivateAccess))
 		FOnMoveForward onMoveForward;
-	
 	UPROPERTY(EditAnywhere)
-		FSpellSettings spellSettings;
+		TSubclassOf<ATridusSpell> tridus = nullptr;
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<AStarFishSpell> starfish = nullptr;
+	/*UPROPERTY(EditAnywhere)
+		TSubclassOf<ATridusSpell> arcus = nullptr;*/
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<ASphereSpell> ball = nullptr;
 
 
 
@@ -52,4 +47,6 @@ protected:
 	void MoveForward(float _axis);
 	void Rotate(float _axis);
 	void UseTridus();
+	void UseStarfish();
+	void UseArcus();
 };
