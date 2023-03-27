@@ -1,0 +1,22 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/UE_Projects/PathCorr/Content/Levels/PathCorr.umap",
+				"D:/UE_Projects/PathCorr/Content/BP/Item.uasset",
+				"D:/UE_Projects/PathCorr/Content/Spawner/BasicSpawnerNoClamped.uasset",
+				"D:/UE_Projects/PathCorr/Content/Spawner/BasicSpawneClamped.uasset",
+				"D:/UE_Projects/PathCorr/Content/BP/SpawnerActorBP.uasset",
+				"D:/UE_Projects/PathCorr/Content/Levels/Paths.umap",
+				"D:/UE_Projects/PathCorr/Content/BP/WaypontActorBP.uasset",
+				"D:/UE_Projects/PathCorr/Content/BP/PathActorBP.uasset",
+				"D:/UE_Projects/PathCorr/Content/BP/CharacterPathBP.uasset",
+				"D:/UE_Projects/PathCorr/Content/Spawner/BasicSpawner.uasset",
+				"D:/UE_Projects/PathCorr/Content/Spawner/BasicSpawneClampedr.uasset"
+			]
+		}
+	]
+}
