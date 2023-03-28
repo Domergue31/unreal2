@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/UE_Projects/MarioProject/Content/Levels/MarioProject.umap",
+				"D:/UE_Projects/MarioProject/Content/BP/BrickBlockBP.uasset",
+				"D:/UE_Projects/MarioProject/Content/BP/BrickLootBlockBP.uasset"
+			]
+		}
+	]
+}

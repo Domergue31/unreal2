@@ -1,0 +1,21 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/UE_Projects/SpellCorr/Content/Levels/Spells.umap",
+				"D:/UE_Projects/SpellCorr/Content/BP/BasicProjectileBP.uasset",
+				"D:/UE_Projects/SpellCorr/Content/Datas/Skills/StarFish.uasset",
+				"D:/UE_Projects/SpellCorr/Content/BP/FireProjectileBP.uasset",
+				"D:/UE_Projects/SpellCorr/Content/Datas/Skills/StarFish/StarFish.uasset",
+				"D:/UE_Projects/SpellCorr/Content/Datas/Skills/StarFish/QuickStarFish.uasset",
+				"D:/UE_Projects/SpellCorr/Content/Datas/Skills/Arceus/Arceus.uasset",
+				"D:/UE_Projects/SpellCorr/Content/Datas/Skills/Tridus/Tridus.uasset",
+				"D:/UE_Projects/SpellCorr/Content/Datas/Skills/QuickStarFish.uasset",
+				"D:/UE_Projects/SpellCorr/Content/Datas/Skills/Arceus.uasset"
+			]
+		}
+	]
+}
