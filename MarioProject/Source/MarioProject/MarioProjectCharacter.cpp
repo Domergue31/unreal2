@@ -84,6 +84,7 @@ void AMarioProjectCharacter::SetupPlayerInputComponent(class UInputComponent* Pl
 		//Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AMarioProjectCharacter::Look);
 
+		PlayerInputComponent->BindAction("Spells", IE_Pressed, this, &AMarioProjectCharacter::LaunchSpell);
 	}
 
 }
@@ -122,6 +123,13 @@ void AMarioProjectCharacter::Look(const FInputActionValue& Value)
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
+}
+
+void AMarioProjectCharacter::LaunchSpell()
+{
+	if (!fireBall)
+		return;
+	fireBall->Spawn(GetWorld(), GetActorLocation(), GetActorRotation().Yaw);
 }
 
 

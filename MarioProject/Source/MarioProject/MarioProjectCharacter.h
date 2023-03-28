@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
+#include "Spells.h"
 #include "MarioProjectCharacter.generated.h"
 
 
@@ -37,6 +38,9 @@ class AMarioProjectCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* LookAction;
 
+	UPROPERTY(EditAnywhere)
+		TObjectPtr<USpells> fireBall = nullptr;
+
 public:
 	AMarioProjectCharacter();
 	
@@ -48,6 +52,8 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
+
+	void LaunchSpell();
 			
 
 protected:

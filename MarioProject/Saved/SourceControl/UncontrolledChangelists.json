@@ -5,6 +5,11 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"C:/Users/thibd/OneDrive/Documents/GitHub/unreal2/MarioProject/Content/ThirdPerson/Input/IMC_Default.uasset",
+				"C:/Users/thibd/OneDrive/Documents/GitHub/unreal2/MarioProject/Content/Levels/MarioProject.umap",
+				"C:/Users/thibd/OneDrive/Documents/GitHub/unreal2/MarioProject/Content/Data/FireBall.uasset",
+				"C:/Users/thibd/OneDrive/Documents/GitHub/unreal2/MarioProject/Content/BP/ProjectilesBP.uasset",
+				"C:/Users/thibd/OneDrive/Documents/GitHub/unreal2/MarioProject/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset",
 				"D:/UE_Projects/MarioProject/Content/Levels/MarioProject.umap",
 				"D:/UE_Projects/MarioProject/Content/BP/BrickBlockBP.uasset",
 				"D:/UE_Projects/MarioProject/Content/BP/BrickLootBlockBP.uasset"
