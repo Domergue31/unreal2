@@ -22,6 +22,11 @@ void ABrickBlock::Tick(float DeltaTime)
 
 void ABrickBlock::Active()
 {
-	SetLifeSpan(0.1);
+	actualTouch++;
+	if (actualTouch == maxTouch)
+	{
+		Break();
+		onBreak.Broadcast();
+	}
 }
 

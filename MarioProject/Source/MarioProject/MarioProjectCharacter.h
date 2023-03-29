@@ -40,11 +40,15 @@ class AMarioProjectCharacter : public ACharacter
 
 	UPROPERTY(EditAnywhere)
 		TObjectPtr<USpells> fireBall = nullptr;
+	UPROPERTY(EditAnywhere)
+		int golds;
+	FVector initLoc;
+	FRotator initRot;
 
 public:
 	AMarioProjectCharacter();
-	
-
+	FORCEINLINE void AddGolds(const int& _value) { golds += _value; }
+	void Respawn();
 protected:
 
 	/** Called for movement input */

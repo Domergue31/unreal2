@@ -4,21 +4,22 @@
 #include "BlockTriggerBox.h"
 #include "MarioProjectCharacter.h"
 
+
+
+
+
 void ABlockTriggerBox::BeginPlay()
 {
-	if (!originalBlock)
-		return;
-	block = GetWorld()->SpawnActor<ABlock>(originalBlock, GetActorLocation(), GetActorRotation());
+	block->OnBreak().AddDynamic(this, &ABlockTriggerBox::Break);
 }
+
 
 void ABlockTriggerBox::NotifyActorBeginOverlap(AActor* _other)
 {
 	AMarioProjectCharacter* _char = Cast<AMarioProjectCharacter>(_other);
-	if (!_char || !block)
+	if (!_char)
 		return;
 	block->Active();
-	this->SetActorHiddenInGame(true);
-	Destroy();
 }
 
 void ABlockTriggerBox::NotifyActorEndOverlap(AActor* _other)
@@ -26,4 +27,10 @@ void ABlockTriggerBox::NotifyActorEndOverlap(AActor* _other)
 	AMarioProjectCharacter* _char = Cast<AMarioProjectCharacter>(_other);
 	if (!_char)
 		return;
+}
+
+void ABlockTriggerBox::Break()
+{
+	SetLifeSpan(2);
+	SetActorLocation(GetActorLocation() + FVector(0, 10000, 0));
 }

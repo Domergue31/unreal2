@@ -13,7 +13,6 @@ ABlock::ABlock()
 void ABlock::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 void ABlock::Tick(float DeltaTime)
@@ -22,7 +21,13 @@ void ABlock::Tick(float DeltaTime)
 
 }
 
+void ABlock::Break()
+{
+	SetLifeSpan(0.1f);
+}
+
 void ABlock::Active()
 {
+
 }
 

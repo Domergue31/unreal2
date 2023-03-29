@@ -14,14 +14,14 @@ class MARIOPROJECT_API AProjectiles : public AActor
 		TObjectPtr<UStaticMeshComponent> mesh = nullptr;
 	UPROPERTY(EditAnywhere, meta = (UIMin = 1, ClampMin = 1))
 		float projectilesSpeed = 100;
-	
+	bool destroy = false;
 public:	
 	AProjectiles();
 	void InitProjectile(const float& _lifeSpan);
 protected:
 	virtual void BeginPlay() override;
-
-public:	
 	virtual void Tick(float DeltaTime) override;
+	virtual void NotifyActorBeginOverlap(AActor* _other);
 	void Behaviour();
+	void IsDestroy();
 };

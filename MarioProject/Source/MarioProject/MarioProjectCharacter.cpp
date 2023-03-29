@@ -51,6 +51,12 @@ AMarioProjectCharacter::AMarioProjectCharacter()
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
 
+void AMarioProjectCharacter::Respawn()
+{
+	SetActorLocation(initLoc);
+	SetActorRotation(initRot);
+}
+
 void AMarioProjectCharacter::BeginPlay()
 {
 	// Call the base class  
@@ -64,6 +70,8 @@ void AMarioProjectCharacter::BeginPlay()
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
+	initLoc = GetActorLocation();
+	initRot = GetActorRotation();
 }
 
 //////////////////////////////////////////////////////////////////////////
