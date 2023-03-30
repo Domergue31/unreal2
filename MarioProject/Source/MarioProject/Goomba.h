@@ -16,11 +16,12 @@ class MARIOPROJECT_API AGoomba : public AMobEnnemy
 	
 public:	
 	AGoomba();
+	virtual void Hit() override;
 
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 	virtual void NotifyActorBeginOverlap(AActor* _other) override;
 	void Move();
-	virtual void Hit() override;
+	void ChangeDirection();
 };

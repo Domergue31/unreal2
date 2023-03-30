@@ -18,10 +18,9 @@ protected:
 		int actualLife;
 public:	
 	AMobEnnemy();
-
+	virtual void Hit();
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 	virtual void NotifyActorBeginOverlap(AActor* _other);
-	virtual void Hit();
 };

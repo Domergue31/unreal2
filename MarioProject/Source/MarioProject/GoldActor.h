@@ -13,7 +13,6 @@ class MARIOPROJECT_API AGoldActor : public AElements
 	
 public:	
 	AGoldActor();
-	void Init(const float& _lifeSpan, class AMarioProjectCharacter* _char);
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;

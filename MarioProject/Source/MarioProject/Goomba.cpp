@@ -18,7 +18,6 @@ AGoomba::AGoomba()
 void AGoomba::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -38,15 +37,15 @@ void AGoomba::NotifyActorBeginOverlap(AActor* _other)
 	}
 	AMarioProjectCharacter* _char = Cast<AMarioProjectCharacter>(_other);
 	if (_char)
-		_char->Respawn();
+		_char->Hurt();
 	ABlock* _block = Cast<ABlock>(_other);
 	if (_block)
-		direction = -direction;
+		ChangeDirection();
 }
 
 void AGoomba::Move()
 {
-	AddActorWorldOffset((GetActorForwardVector() * direction)  * GetWorld()->DeltaTimeSeconds * settings->Speed());
+	AddActorWorldOffset((GetActorForwardVector() * 1.0)  * GetWorld()->DeltaTimeSeconds * settings->Speed());
 }
 
 void AGoomba::Hit()
@@ -54,4 +53,10 @@ void AGoomba::Hit()
 	actualLife--;
 	if (actualLife == 0)
 		Destroy();
+}
+
+void AGoomba::ChangeDirection()
+{
+	FRotator _rot = GetActorRotation();
+	SetActorRotation(FRotator(_rot.Pitch, _rot.Yaw + 180, _rot.Roll));
 }

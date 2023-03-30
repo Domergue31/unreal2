@@ -39,16 +39,23 @@ class AMarioProjectCharacter : public ACharacter
 	class UInputAction* LookAction;
 
 	UPROPERTY(EditAnywhere)
-		TObjectPtr<USpells> fireBall = nullptr;
+		TObjectPtr<USpells> spell = nullptr;
 	UPROPERTY(EditAnywhere)
 		int golds;
+	UPROPERTY(EditAnywhere)
+		bool invisibility = false;
+	int life = 2;
 	FVector initLoc;
+	FVector initScale;
 	FRotator initRot;
-
+	FTimerHandle invisibilityTimer;
 public:
 	AMarioProjectCharacter();
 	FORCEINLINE void AddGolds(const int& _value) { golds += _value; }
+	FORCEINLINE void SetSpell(TObjectPtr<USpells> _newSpell) { spell = _newSpell; }
 	void Respawn();
+	void Hurt();
+	void Healing();
 protected:
 
 	/** Called for movement input */
@@ -67,6 +74,8 @@ protected:
 	// To add mapping context
 	virtual void BeginPlay();
 
+	void StartInvisibility(const float& _time);
+	void EndInvisibility();
 public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }

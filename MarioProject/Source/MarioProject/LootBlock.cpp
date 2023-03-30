@@ -20,7 +20,7 @@ void ALootBlock::Tick(float DeltaTime)
 void ALootBlock::Used()
 {
 	used = true;
-	mesh->SetMaterial(0, LoadObject<UMaterialInterface>(this, TEXT("Material'/Engine/EditorMaterials/Cloth/CameraLitDoubleSided.CameraLitDoubleSided'")));
+	mesh->SetMaterial(0, LoadObject<UMaterialInterface>(this, TEXT("'/Engine/Tutorial/SubEditors/TutorialAssets/TutorialMaterial.TutorialMaterial'")));
 }
 
 void ALootBlock::Active()
@@ -30,6 +30,7 @@ void ALootBlock::Active()
 	actualTouch++;
 	if (actualTouch == maxTouch)
 	{
+		Used();
 		AElements* _powerUp = GetWorld()->SpawnActor<AElements>(element, GetActorLocation() + FVector(0, 0, 100), GetActorRotation());
 		Break();
 		onBreak.Broadcast();

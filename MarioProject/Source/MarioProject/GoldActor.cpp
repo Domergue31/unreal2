@@ -9,13 +9,6 @@ AGoldActor::AGoldActor()
 	PrimaryActorTick.bCanEverTick = true;
 }
 
-void AGoldActor::Init(const float& _lifeSpan, AMarioProjectCharacter* _char)
-{
-	SetLifeSpan(_lifeSpan);
-	_char->AddGolds(1);
-
-}
-
 void AGoldActor::BeginPlay()
 {
 	Super::BeginPlay();

@@ -17,7 +17,7 @@ void ABlockTriggerBox::BeginPlay()
 void ABlockTriggerBox::NotifyActorBeginOverlap(AActor* _other)
 {
 	AMarioProjectCharacter* _char = Cast<AMarioProjectCharacter>(_other);
-	if (!_char)
+	if (!_char || !block)
 		return;
 	block->Active();
 }
@@ -31,6 +31,5 @@ void ABlockTriggerBox::NotifyActorEndOverlap(AActor* _other)
 
 void ABlockTriggerBox::Break()
 {
-	SetLifeSpan(2);
-	SetActorLocation(GetActorLocation() + FVector(0, 10000, 0));
+	this->Destroy();
 }

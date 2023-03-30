@@ -51,12 +51,6 @@ AMarioProjectCharacter::AMarioProjectCharacter()
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
 
-void AMarioProjectCharacter::Respawn()
-{
-	SetActorLocation(initLoc);
-	SetActorRotation(initRot);
-}
-
 void AMarioProjectCharacter::BeginPlay()
 {
 	// Call the base class  
@@ -72,6 +66,51 @@ void AMarioProjectCharacter::BeginPlay()
 	}
 	initLoc = GetActorLocation();
 	initRot = GetActorRotation();
+	initScale = GetActorScale();
+	JumpMaxHoldTime = 0.3;
+}
+
+
+void AMarioProjectCharacter::Respawn()
+{
+	life = 2;
+	SetActorScale3D(initScale);
+	SetActorLocation(initLoc);
+	SetActorRotation(initRot);
+}
+void AMarioProjectCharacter::Hurt()
+{
+	if (invisibility)
+		return;
+	switch (life)
+	{
+	case 2: 
+		life = 1;
+		SetActorScale3D(GetActorScale() * 0.7);
+		StartInvisibility(1);
+		break;
+	case 1:
+		Respawn();
+		break;
+	}
+}
+void AMarioProjectCharacter::Healing()
+{
+	if (life == 2)
+		return;
+	life = 2;
+	SetActorScale3D(initScale);
+}
+void AMarioProjectCharacter::StartInvisibility(const float& _time)
+{
+	invisibility = true;
+	GetWorldTimerManager().SetTimer(invisibilityTimer, this, &AMarioProjectCharacter::EndInvisibility, _time, true);
+}
+
+void AMarioProjectCharacter::EndInvisibility()
+{
+	invisibility = false;
+	GetWorldTimerManager().ClearTimer(invisibilityTimer);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -135,9 +174,9 @@ void AMarioProjectCharacter::Look(const FInputActionValue& Value)
 
 void AMarioProjectCharacter::LaunchSpell()
 {
-	if (!fireBall)
+	if (!spell)
 		return;
-	fireBall->Spawn(GetWorld(), GetActorLocation(), GetActorRotation().Yaw);
+	spell->Spawn(GetWorld(), GetActorLocation(), GetActorRotation().Yaw);
 }
 
 

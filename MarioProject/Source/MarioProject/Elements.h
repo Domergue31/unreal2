@@ -13,7 +13,6 @@ class MARIOPROJECT_API AElements : public AActor
 	
 public:	
 	AElements();
-
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
