@@ -1,0 +1,24 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/UE_Projects/marioCorr/Content/Levels/MarioCorr.umap",
+				"D:/UE_Projects/marioCorr/Content/Sphere_Blueprint.uasset",
+				"D:/UE_Projects/marioCorr/Content/BP/BooActorBP.uasset",
+				"D:/UE_Projects/marioCorr/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset",
+				"D:/UE_Projects/marioCorr/Content/BP/DestructibleBlockBP.uasset",
+				"D:/UE_Projects/marioCorr/Content/ThirdPerson/Input/IMC_Default.uasset",
+				"D:/UE_Projects/marioCorr/Content/BP/BonusBlockGraphics.uasset",
+				"D:/UE_Projects/marioCorr/Content/BP/BonusBlockBP.uasset",
+				"D:/UE_Projects/marioCorr/Content/BP/BonusItem.uasset",
+				"D:/UE_Projects/marioCorr/Content/BP/MarioCharacterBP.uasset",
+				"D:/UE_Projects/marioCorr/Content/BP/MarioGameModeBP.uasset",
+				"D:/UE_Projects/marioCorr/Content/BP/CoinCollectibleBP.uasset",
+				"D:/UE_Projects/marioCorr/Content/BP/GoombaBP.uasset"
+			]
+		}
+	]
+}
