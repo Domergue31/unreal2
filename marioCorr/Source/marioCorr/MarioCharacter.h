@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "SaveData.h"
 #include "MarioCharacter.generated.h"
 
 USTRUCT()
@@ -33,17 +34,35 @@ UCLASS()
 class MARIOCORR_API AMarioCharacter : public ACharacter
 {
 	GENERATED_BODY()
+		DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMove, float, _axis);
+
+	UPROPERTY(EditAnywhere, BlueprintCallable, BlueprintAssignable, meta = (AllowPrivateAccess))
+		FOnMove onMove;
+		UPROPERTY(EditAnywhere)
+		TObjectPtr<USaveData> saveData = nullptr;
 		FSnapShot marioSnap;
-		bool isDead = false;
+	bool isDead = false,
+		hasPowerUp = false,
+		startPowerUpEffect = false,
+		startShrinkEffect = false;
 		FTimerHandle respawnDelay;
+		FVector initSize, powerUpTargetSize;
+		float powerUpTimer = 0;
 public:
+	FORCEINLINE FOnMove& OnMove() { return onMove; }
 	FORCEINLINE bool IsDead() const { return isDead; }
+	FORCEINLINE bool GetPowerUp() const { return hasPowerUp; }
+	FORCEINLINE void SetPowerUp(bool& _value) { hasPowerUp = _value; }
 	void Die();
+	void AddPowerUp();
 	AMarioCharacter();
 protected:
 	virtual void BeginPlay() override;
+	void ReloadDatas();
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	void MoveForward(float _axis);
 	void OnRespawnDelayed();
+	void PowerUpEffect();
+	void ShrinkEffect();
 };
