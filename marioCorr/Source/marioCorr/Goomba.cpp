@@ -12,7 +12,7 @@ void AGoomba::GlobalBehaviour(AMarioCharacter* _mario)
 
 void AGoomba::UpBehaviour(AMarioCharacter* _mario)
 {
-	if (_mario && _mario->IsDead())
+	if (_mario && _mario->IsDead() || _mario->GetStartShrinkEffect())
 		return;
 	Die();
 }

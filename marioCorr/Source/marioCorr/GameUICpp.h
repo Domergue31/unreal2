@@ -4,7 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "Components/Button.h"
+#include "Components/Image.h"
+#include <Components/TextBlock.h>
 #include "GameUICpp.generated.h"
 
 /**
@@ -14,11 +15,27 @@ UCLASS()
 class MARIOCORR_API UGameUICpp : public UUserWidget
 {
 	GENERATED_BODY()
-		UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
-		TObjectPtr<UButton> playButton = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
+		TObjectPtr<UImage> coinImage = nullptr;
+	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
+		TObjectPtr<UTextBlock> coins = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
+		TObjectPtr<UTextBlock> score = nullptr;
+	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
+		TObjectPtr<UTextBlock> mario = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
+		TObjectPtr<UTextBlock> levels = nullptr;
+	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
+		TObjectPtr<UTextBlock> world = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
+		TObjectPtr<UTextBlock> Time = nullptr;
+	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
+		TObjectPtr<UTextBlock> timer = nullptr;
 
 	virtual void NativeConstruct() override;
 
-	void Bind();
-	UFUNCTION() void Test();
 };

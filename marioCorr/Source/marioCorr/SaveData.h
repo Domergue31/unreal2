@@ -13,8 +13,12 @@ UCLASS()
 class MARIOCORR_API USaveData : public UDataAsset
 {
 	GENERATED_BODY()
-		UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere)
 		bool savePowerUp = false;
+	UPROPERTY(VisibleAnywhere)
+		int saveCoins = 0;
+	UPROPERTY(VisibleAnywhere)
+		int saveScore = 0;
 
 public:
 	void SavedCharacter(class AMarioCharacter* _char);

@@ -13,6 +13,8 @@ UCLASS()
 class MARIOCORR_API ADestructibleBlock : public ABlock
 {
 	GENERATED_BODY()
+private:
+	void Save(class AMarioCharacter* _mario);
 protected:	
 	virtual void DownBehaviour(class AMarioCharacter* _char) override;
 };

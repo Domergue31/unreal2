@@ -13,7 +13,8 @@ UCLASS()
 class MARIOCORR_API APowerUp : public ACollectible
 {
 	GENERATED_BODY()
-	
+private:
+	void Save(AMarioCharacter* _mario);
 protected:
 	virtual void CollectibleBehaviour(AMarioCharacter* _mario) override;
 };

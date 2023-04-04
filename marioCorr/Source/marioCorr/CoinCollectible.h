@@ -17,6 +17,7 @@ class MARIOCORR_API ACoinCollectible : public ACollectible
 		float rotateSpeed = 2;
 private:
 	void RotateCoin();
+	void Save(AMarioCharacter* _mario);
 protected:
 	virtual void Tick(float _delta) override;
 	virtual void CollectibleBehaviour(AMarioCharacter* _mario) override;

@@ -41,6 +41,7 @@ void UEnemyMovingComponent::Move()
 	SetOwnerLocation(_next);
 	if (IsAtLocation())
 	{
+		SetOwnerRotation(GetOwnerRotation() + FRotator(0, 180, 0));
 		toTarget = !toTarget;
 		currentLocation = toTarget ? targetLocation : initLocation;
 	}
