@@ -3,14 +3,14 @@
 
 #include "PowerUp.h"
 #include "MarioGameMode.h"
+#include "MarioGameInstance.h"
 
 void APowerUp::Save(AMarioCharacter* _mario)
 {
-	AMarioGameMode* _gm = Cast<AMarioGameMode>(GetWorld()->GetAuthGameMode());
-	if (!_gm)
+	UMarioGameInstance* _gi = GetWorld()->GetGameInstance<UMarioGameInstance>();
+	if (!_gi)
 		return;
-	_gm->GetScore()->AddScore(1000);
-	_mario->SaveData()->SavedCharacter(_mario);
+	_gi->GetScore()->AddScore(1000);
 }
 
 void APowerUp::CollectibleBehaviour(AMarioCharacter* _mario)

@@ -13,10 +13,17 @@ UCLASS()
 class MARIOCORR_API UCoinManager : public UObject
 {
 	GENERATED_BODY()
-
+		DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAddCoin, int, _score);
+	FOnAddCoin onAddCoin;
 	UPROPERTY(EditAnywhere)
 		int coins = 0;
 public:
-	FORCEINLINE void AddCoins(int _value) { coins += _value; }
+	FORCEINLINE FOnAddCoin& OnAddCoin() { return onAddCoin; }
+	FORCEINLINE void AddCoins(int _value) 
+	{
+		coins += _value; 
+		onAddCoin.Broadcast(coins);
+	}
 	FORCEINLINE int GetCoins() const { return coins; }
+	void ResetCoins();
 };

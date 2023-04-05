@@ -3,3 +3,8 @@
 
 #include "CoinManager.h"
 
+void UCoinManager::ResetCoins()
+{
+	coins = 0;
+	onAddCoin.Broadcast(coins);
+}

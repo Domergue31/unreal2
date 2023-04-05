@@ -27,15 +27,15 @@ class MARIOCORR_API UGameUICpp : public UUserWidget
 		TObjectPtr<UTextBlock> mario = nullptr;
 
 	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
-		TObjectPtr<UTextBlock> levels = nullptr;
-	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
-		TObjectPtr<UTextBlock> world = nullptr;
-
-	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
 		TObjectPtr<UTextBlock> Time = nullptr;
 	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess, BindWidget))
 		TObjectPtr<UTextBlock> timer = nullptr;
 
 	virtual void NativeConstruct() override;
+	UFUNCTION() void SetScoreText(int _value);
+	UFUNCTION() void SetCoinText(int _value);
+	UFUNCTION() void SetTimerText(int _value);
+private:
+	void Init(class UMarioGameInstance* _gi);
 
 };

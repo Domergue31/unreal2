@@ -13,6 +13,8 @@ UCLASS()
 class MARIOCORR_API AGoomba : public AEnnemy
 {
 	GENERATED_BODY()
+private:
+	void Save();
 protected:
 	virtual void GlobalBehaviour(AMarioCharacter* _mario) override;
 	virtual void UpBehaviour(AMarioCharacter* _mario) override;

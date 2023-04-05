@@ -13,14 +13,17 @@ UCLASS()
 class MARIOCORR_API UScoreManager : public UObject
 {
 	GENERATED_BODY()
-
+		DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAddScore, int, _score);
+	FOnAddScore onAddScore;
 	UPROPERTY(EditAnywhere)
 		int score = 0;
 public:
+	FORCEINLINE FOnAddScore& OnAddScore() { return onAddScore; }
 	FORCEINLINE void AddScore(int _value)
 	{
 		score += _value; 
-		UE_LOG(LogTemp, Warning, TEXT("%d"), score);
+		onAddScore.Broadcast(score);
 	}
 	FORCEINLINE int GetScore() const { return score; }
+	void ResetScore();
 };

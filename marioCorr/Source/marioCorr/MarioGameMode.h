@@ -16,14 +16,14 @@ class MARIOCORR_API AMarioGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere)
+	/*UPROPERTY(EditAnywhere)
 		TObjectPtr<UCoinManager> coins = nullptr;
 	UPROPERTY(EditAnywhere)
 		TObjectPtr<UScoreManager> score = nullptr;
 
 public:
 	FORCEINLINE TObjectPtr<UCoinManager> GetCoins() { return coins; }
-	FORCEINLINE TObjectPtr<UScoreManager> GetScore() { return score; }
+	FORCEINLINE TObjectPtr<UScoreManager> GetScore() { return score; }*/
 protected:
 	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
 };

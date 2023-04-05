@@ -3,6 +3,7 @@
 
 #include "CoinCollectible.h"
 #include "MarioGameMode.h"
+#include "MarioGameInstance.h"
 
 void ACoinCollectible::RotateCoin()
 {
@@ -11,12 +12,17 @@ void ACoinCollectible::RotateCoin()
 
 void ACoinCollectible::Save(AMarioCharacter* _mario)
 {
-	AMarioGameMode* _gm = Cast<AMarioGameMode>(GetWorld()->GetAuthGameMode());
+	/*AMarioGameMode* _gm = Cast<AMarioGameMode>(GetWorld()->GetAuthGameMode());
 	if (!_gm)
 		return;
 	_gm->GetCoins()->AddCoins(1);
-	_gm->GetScore()->AddScore(200);
-	_mario->SaveData()->SavedCharacter(_mario);
+	_gm->GetScore()->AddScore(200);*/
+	/*_mario->SaveData()->SavedCharacter(_mario);*/
+	UMarioGameInstance* _gi = GetWorld()->GetGameInstance<UMarioGameInstance>();
+	if (!_gi)
+		return;
+	_gi->GetCoins()->AddCoins(1);
+	_gi->GetScore()->AddScore(200);
 }
 
 void ACoinCollectible::Tick(float _delta)

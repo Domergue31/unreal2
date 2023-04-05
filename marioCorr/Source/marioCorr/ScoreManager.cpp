@@ -3,3 +3,8 @@
 
 #include "ScoreManager.h"
 
+void UScoreManager::ResetScore()
+{
+	score = 0;
+	onAddScore.Broadcast(score);
+}

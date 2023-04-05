@@ -6,6 +6,6 @@
 void AMarioGameMode::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)
 {
 	Super::InitGame(MapName, Options, ErrorMessage);
-	coins = NewObject<UCoinManager>(this);
-	score = NewObject<UScoreManager>(this);
+	//coins = NewObject<UCoinManager>(this);
+	//score = NewObject<UScoreManager>(this);
 }
