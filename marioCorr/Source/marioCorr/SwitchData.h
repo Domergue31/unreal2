@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "GameFramework/Character.h"
 #include <Kismet/GameplayStatics.h>
 #include "SwitchData.generated.h"
 
@@ -14,7 +15,7 @@ UCLASS()
 class MARIOCORR_API USwitchData : public UDataAsset
 {
 	GENERATED_BODY()
-		UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere)
 		TSoftObjectPtr<UWorld> level = nullptr;
 public:
 	FORCEINLINE void LoadLevel(UWorld* _world)
