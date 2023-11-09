@@ -1,0 +1,20 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/DOME3105/Documents/Unreal Projects/CameraProject/Content/Levels/CameraPrjectsLevel.umap",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CameraProject/Content/DataAsset/QuickCamera.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CameraProject/Content/DataAsset/SlowCamera.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CameraProject/Content/BP/CameraActorFollowBP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CameraProject/Content/BP/CameraOrbitBP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CameraProject/Content/DataAsset/FollowAsset/SlowCamera.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CameraProject/Content/DataAsset/FollowAsset/QuickCamera.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CameraProject/Content/DataAsset/OrbitAsset/OrbitAsset.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CameraProject/Content/BP/CameraActorMovementBP.uasset"
+			]
+		}
+	]
+}
