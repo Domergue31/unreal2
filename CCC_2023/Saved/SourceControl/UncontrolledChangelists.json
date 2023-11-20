@@ -1,0 +1,34 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/Blueprints/BP_CameraActor.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/Blueprints/BP_PNJCamera.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/Levels/Dialog.umap",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/Blueprints/MainGameMode_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/Levels/Manager.umap",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/DataAssets/CameraFollow/CameraFollowQuick.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/Levels/Cameras.umap",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/Blueprints/GameModes/MainGameMode_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/Blueprints/CameraManager_C_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/Blueprints/Test/ActorTester.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/DataAssets/CameraFollow/CameraFollowBasic.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/Blueprints/DefaultFollow_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/Blueprints/DefaultOrbit_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CCC_2023/Content/Blueprints/MyCameraManager_C_BP.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/Levels/Cameras.umap",
+				"D:/UE_PROJECTS/CCC_2023/Content/Blueprints/BP_CameraActor.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/DataAssets/CameraFollow/CameraFollowBasic.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/DataAssets/CameraFollow/CameraFollowQuick.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/Expressions/RotationExpression.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/DataAssets/OrbitCam/CameraOrbitBasic.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/Levels/Dialog.umap",
+				"D:/UE_PROJECTS/CCC_2023/Content/DataAssets/PNJCamera.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/Blueprints/BP_PNJCamera.uasset"
+			]
+		}
+	]
+}
