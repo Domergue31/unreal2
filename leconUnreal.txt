@@ -1,0 +1,9 @@
+memme regle il faut que l'actor ai une box de colision, verifié si notre object en a un 
+
+GetWorld() accesserur vers des linetrace 
+
+mais on vas utiliser kismet/kismetSystemLibrary.h
+
+
+
+lorsque qu'on dot il faut que les vecteur sois normalisé
