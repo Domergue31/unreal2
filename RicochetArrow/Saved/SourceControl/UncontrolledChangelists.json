@@ -1,0 +1,40 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Levels/Level.umap",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Blueprint/Character/MainPlayer_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Blueprint/GameModeBP/RicochetGameMode_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Blueprint/RicochetArrowActor_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/DataAsset/RicochetLauncher/RicochetLauncher_Basic.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Longbow_Locomotion_Pack/Erika_Archer.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Longbow_Locomotion_Pack/standing_idle_01.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Crouched_Walking.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Standing_Idle.uasset",
+				"C:/Program Files/Epic Games/UE_5.2/Engine/Content/Tutorial/SubEditors/TutorialAssets/Character/TutorialTPP_Skeleton.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/EyeSpec_MAT.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/FemaleFitA_Body_diffuse.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/FemaleFitA_StdNM.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Akai_MAT.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Erika_Archer_Clothes_diffuse.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Erika_Archer_Clothes_normal.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/eyelash_MAT.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/FemaleFitA_eyelash_diffuse.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Body_MAT.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/FemaleFitA_Body_diffuse_ncl1_1.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Standing_Idle_Skeleton.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Standing_Idle_PhysicsAsset.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Standing_Idle_Anim_Take_001.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Standing_Idle_Anim_mixamo_com.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Blueprint/Animations/MainPlayerAnim_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Blueprint/Animations/Walk_BlendSpace.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Arrow__1_.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/lambert2.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Blueprint/RicochetGameMode_BP.uasset"
+			]
+		}
+	]
+}
