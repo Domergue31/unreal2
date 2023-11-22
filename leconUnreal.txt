@@ -7,3 +7,12 @@ mais on vas utiliser kismet/kismetSystemLibrary.h
 
 
 lorsque qu'on dot il faut que les vecteur sois normalisé
+
+
+
+Input Unreal:
+
+pour faire utilisait l anouvelle methods pour les input il faut créer un Input Mapping Context qui vas contenir des input action => click droit/Input
+
+dans Input Action:
+toggle trigger When Paused => choisit si on veut pouvoir appuyé sur la touche quand le jeux est en pause ou pas

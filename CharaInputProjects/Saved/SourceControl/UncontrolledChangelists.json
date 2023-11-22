@@ -1,0 +1,39 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Levels/level.umap",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Blueprints/GameMode/InputGameMode_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Blueprints/Chracter/MainPlayer_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Input/ForwardMovement.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Input/RightMovement.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Input/MainInput.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Input/CameraYaw.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Input/CameraPitch.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Input/PlaceTakeObject.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/Idle.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/Walking.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Blueprints/Chracter/MainPlayerAnim_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Blueprints/Chracter/Move_BlendSpace.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/Right_Strafe_Walking.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/Left_Strafe_Walking.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/Walking_Backward.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/running.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/right_turn.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/right_turn_90.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/right_strafe.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/left_turn.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/left_turn_90.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/left_strafe.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/jump.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/Pack/Walking.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/Pack/running.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/Pack/right_turn_90.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/CharaInputProjects/Content/Graph/Pack/right_turn.uasset"
+			]
+		}
+	]
+}
