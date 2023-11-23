@@ -12,6 +12,18 @@ public class CharaInputProjects : ModuleRules
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
+		PrivateIncludePaths.AddRange(new string[]
+		{
+			"CharaInputProjects/Character",
+			"CharaInputProjects/Character/Interact"
+		});
+
+		PublicIncludePaths.AddRange(new string[]
+		{
+			"CharaInputProjects/Character",
+            "CharaInputProjects/Character/Interact"
+        });
+
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 		
