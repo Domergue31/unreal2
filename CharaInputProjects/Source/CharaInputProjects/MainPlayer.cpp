@@ -1,8 +1,8 @@
 
 
 #include "MainPlayer.h"
-#include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "EnhancedInputComponent.h"
 #include <Kismet/KismetSystemLibrary.h>
 
 AMainPlayer::AMainPlayer()
@@ -44,6 +44,7 @@ void AMainPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	_input->BindAction(cameraYawInput, ETriggerEvent::Triggered, this, &AMainPlayer::RotateCameraYaw);
 	_input->BindAction(cameraPitchInput, ETriggerEvent::Triggered, this, &AMainPlayer::RotateCameraPitch);
 	_input->BindAction(takePLaceObjectInput, ETriggerEvent::Triggered, this, &AMainPlayer::InteractCollectibleObject);
+	_input->BindAction(JumpInput, ETriggerEvent::Triggered, this, &AMainPlayer::StartJump);
 }
 
 void AMainPlayer::MoveForward(const FInputActionValue& _value)
@@ -54,7 +55,6 @@ void AMainPlayer::MoveForward(const FInputActionValue& _value)
 		objectTaken->SetActorLocation(GetActorLocation() + GetActorForwardVector() * 100);
 	onForwardMove.Broadcast(_axis);
 }
-
 void AMainPlayer::MoveRight(const FInputActionValue& _value)
 {
 	const float _axis = _value.Get<float>();
@@ -63,7 +63,6 @@ void AMainPlayer::MoveRight(const FInputActionValue& _value)
 		objectTaken->SetActorLocation(GetActorLocation() + GetActorForwardVector() * 100);
 	onRightMove.Broadcast(_axis);
 }
-
 void AMainPlayer::RotateCameraYaw(const FInputActionValue& _value)
 {
 	const float _axis = _value.Get<float>();
@@ -71,7 +70,6 @@ void AMainPlayer::RotateCameraYaw(const FInputActionValue& _value)
 	if (objectTaken)
 		objectTaken->SetActorLocation(GetActorLocation() + GetActorForwardVector() * 100);
 }
-
 void AMainPlayer::RotateCameraPitch(const FInputActionValue& _value)
 {
 	const float _axis = _value.Get<float>();
@@ -100,6 +98,12 @@ AActor* AMainPlayer::IsObjectInFront()
 	if (_hit)
 		return _result.GetActor();
 	return nullptr;
+}
+
+void AMainPlayer::StartJump(const FInputActionValue& _value)
+{
+	Jump();
+	onJump.Broadcast(true);
 }
 
 bool AMainPlayer::CanPlaceObject()

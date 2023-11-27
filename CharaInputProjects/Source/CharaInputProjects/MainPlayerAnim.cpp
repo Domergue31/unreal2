@@ -11,6 +11,7 @@ void UMainPlayerAnim::NativeBeginPlay()
 		return;
 	_player->OnForwardMove().AddDynamic(this, &UMainPlayerAnim::SetForwardSpeed);
 	_player->OnRightMove().AddDynamic(this, &UMainPlayerAnim::SetRightSpeed);
+	_player->OnJump().AddDynamic(this, &UMainPlayerAnim::SetIsJumping);
 }
 
 void UMainPlayerAnim::SetForwardSpeed(float _speed)
@@ -21,4 +22,9 @@ void UMainPlayerAnim::SetForwardSpeed(float _speed)
 void UMainPlayerAnim::SetRightSpeed(float _speed)
 {
 	rightSpeed = _speed;
+}
+
+void UMainPlayerAnim::SetIsJumping(bool _state)
+{
+	isJumping = _state;
 }

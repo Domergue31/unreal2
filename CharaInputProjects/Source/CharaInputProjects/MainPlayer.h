@@ -14,11 +14,14 @@ class CHARAINPUTPROJECTS_API AMainPlayer : public ACharacter
 	GENERATED_BODY()
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnForwardMove, float, _axis);
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnRightMove, float, _axis);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnJump, bool, _state);
 
 	UPROPERTY(BlueprintCallable, BlueprintAssignable, meta = (AllowPrivateAccesse))
 	FOnForwardMove onForwardMove;
 	UPROPERTY(BlueprintCallable, BlueprintAssignable, meta = (AllowPrivateAccesse))
 	FOnRightMove onRightMove;
+	UPROPERTY(BlueprintCallable, BlueprintAssignable, meta = (AllowPrivateAccesse))
+	FOnJump onJump;
 
 #pragma region f/p
 	UPROPERTY(EditAnywhere)
@@ -38,6 +41,8 @@ class CHARAINPUTPROJECTS_API AMainPlayer : public ACharacter
 	TObjectPtr<UInputAction> cameraPitchInput = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Example Input")
 	TObjectPtr<UInputAction> takePLaceObjectInput = nullptr;
+	UPROPERTY(EditAnywhere, Category = "Example Input")
+	TObjectPtr<UInputAction> JumpInput = nullptr;
 
 	UPROPERTY(EditAnywhere, Category="Speed", meta = (UIMin = 0.1, ClampMin = 0.1))
 		float movementSpeed = 1;
@@ -58,6 +63,7 @@ public:
 	AMainPlayer();
 	FORCEINLINE FOnForwardMove& OnForwardMove() { return onForwardMove; }
 	FORCEINLINE FOnRightMove& OnRightMove() { return onRightMove; }
+	FORCEINLINE FOnJump& OnJump() { return onJump; }
 protected:
 	void InitInput();
 	virtual void BeginPlay() override;
@@ -70,8 +76,9 @@ protected:
 	void RotateCameraPitch(const FInputActionValue& _value);
 
 	void InteractCollectibleObject(const FInputActionValue& _value);
-
 	bool CanPlaceObject();
 	AActor* IsObjectInFront();
+
+	void StartJump(const FInputActionValue& _value);
 
 };

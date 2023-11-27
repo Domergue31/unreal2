@@ -18,10 +18,12 @@ class CHARAINPUTPROJECTS_API UMainPlayerAnim : public UAnimInstance
 	float forwardSpeed = 0;	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess))
 	float rightSpeed = 0;
-
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess))
+	bool isJumping = false;
 
 	virtual void NativeBeginPlay() override;
 
 	UFUNCTION() void SetForwardSpeed(float _speed);
 	UFUNCTION() void SetRightSpeed(float _speed);
+	UFUNCTION() void SetIsJumping(bool _state);
 };
