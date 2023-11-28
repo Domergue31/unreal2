@@ -10,8 +10,6 @@
 				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Blueprint/GameModeBP/RicochetGameMode_BP.uasset",
 				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Blueprint/RicochetArrowActor_BP.uasset",
 				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/DataAsset/RicochetLauncher/RicochetLauncher_Basic.uasset",
-				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Longbow_Locomotion_Pack/Erika_Archer.uasset",
-				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Longbow_Locomotion_Pack/standing_idle_01.uasset",
 				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Crouched_Walking.uasset",
 				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Standing_Idle.uasset",
 				"C:/Program Files/Epic Games/UE_5.2/Engine/Content/Tutorial/SubEditors/TutorialAssets/Character/TutorialTPP_Skeleton.uasset",
@@ -33,6 +31,9 @@
 				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Blueprint/Animations/Walk_BlendSpace.uasset",
 				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Arrow__1_.uasset",
 				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/lambert2.uasset",
+				"D:/Github/unreal2/RicochetArrow/Content/Levels/Level.umap",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Longbow_Locomotion_Pack/Erika_Archer.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Graph/Longbow_Locomotion_Pack/standing_idle_01.uasset",
 				"C:/Users/DOME3105/Documents/Unreal Projects/RicochetArrow/Content/Blueprint/RicochetGameMode_BP.uasset"
 			]
 		}

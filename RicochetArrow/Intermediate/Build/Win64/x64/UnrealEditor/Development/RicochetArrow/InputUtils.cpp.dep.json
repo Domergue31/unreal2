@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\github\\unreal2\\ricochetarrow\\source\\ricochetarrow\\inpututils.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\github\\unreal2\\ricochetarrow\\intermediate\\build\\win64\\x64\\ricochetarroweditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_1.h.pch",
+        "Includes": [
+            "d:\\github\\unreal2\\ricochetarrow\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\ricochetarrow\\definitions.ricochetarrow.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,45 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Levels/Cours_WorldScreen.umap",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/BP/DeProjectGM.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/BP/NavigationTester.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Inputs/PlayerMappingContext.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Inputs/ClickAction.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/BP/DefPawn.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Animation/Breathing_Idle_Anim.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Animation/Moonwalk.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Animation/Walking__1_.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Texture/Vampire_diffuse.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Texture/Vampire_diffuse_transparent.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Texture/Vampire_emission.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Texture/Vampire_emission_ncl1_1.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Texture/Vampire_normal.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Texture/Vampire_specular_ncl1_1.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Texture/Vampire_specular.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Texture/Vampire_normal_ncl1_1.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Texture/Vampire_MAT1.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Texture/Vampire_MAT_Transparent.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Mesh/Breathing_Idle_Skeleton.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Mesh/Breathing_Idle_PhysicsAsset.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Mesh/Breathing_Idle.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/BP/Character/DiabloPlayer_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/BP/Character/DiabloPlayerAnim_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/BP/Character/MoveBlend.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/BP/ChestActor_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/BP/CollectibleItem_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/BP/PieceItem_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Mesh/SM_DustBin_2.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/BP/DiabloPlayer_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/BP/Character/MovementBlend.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Breathing_Idle.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Moonwalk.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/ScreenWorld/Content/Gaph/Walking__1_.uasset"
+			]
+		}
+	]
+}
