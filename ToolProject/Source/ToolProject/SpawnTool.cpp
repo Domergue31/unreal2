@@ -57,7 +57,7 @@ void ASpawnTool::DrawAllModules()
 {
 	if (!currentModule)
 		return;
-	currentModule->DrawDebug(GetWorld(), GetActorLocation() + GetActorForwardVector());
+	currentModule->DrawDebug(GetWorld(), GetActorLocation());
 }
 
 void ASpawnTool::AddNewItems(FString _id, TArray<AActor*> _items)

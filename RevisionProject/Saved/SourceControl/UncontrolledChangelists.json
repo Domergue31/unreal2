@@ -1,0 +1,20 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/DOME3105/Documents/Unreal Projects/RevisionProject/Content/Levels/level.umap",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RevisionProject/Content/Blueprint/GameMode/RevisionGameMode_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RevisionProject/Content/Blueprint/Player/MainPlayer_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RevisionProject/Content/Inputs/PlayerInputs/Move.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RevisionProject/Content/Inputs/PlayerInputs/RotateCameraPitch.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RevisionProject/Content/Inputs/PlayerInputs/RotateYaw.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RevisionProject/Content/Inputs/PlayerInputs/MoveVertical.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RevisionProject/Content/Inputs/PlayerInputs/PlayerMapping.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/RevisionProject/Content/Inputs/PlayerInputs/MoveHorizontal.uasset"
+			]
+		}
+	]
+}
