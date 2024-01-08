@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"D:\\Github\\unreal2\\RicochetArrow\\Source\\RicochetArrow\\RicochetArrow.Build.cs",
-		"D:\\Github\\unreal2\\RicochetArrow\\Source\\RicochetArrow.Target.cs",
-		"D:\\Github\\unreal2\\RicochetArrow\\Source\\RicochetArrowEditor.Target.cs"
-	],
-	"EngineVersion": "5.2.1"
-}
