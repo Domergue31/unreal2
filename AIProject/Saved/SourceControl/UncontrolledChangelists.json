@@ -1,0 +1,21 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Levels/level.umap",
+				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/DemoFSMCharacter_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/FSM/FSMObject_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/FSM/State/IdleState_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/FSM/Transition/WaitTransition_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/Bullet_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/FSM/State/ShootState_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/FSM/Transition/WaitDestroyTransition_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/FSM/State/ThrowProjectileState_Corr_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/FSM/Transition/WaitProjKillTransition_Corr_BP.uasset"
+			]
+		}
+	]
+}
