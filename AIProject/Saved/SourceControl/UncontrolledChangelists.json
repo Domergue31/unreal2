@@ -14,7 +14,10 @@
 				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/FSM/State/ShootState_BP.uasset",
 				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/FSM/Transition/WaitDestroyTransition_BP.uasset",
 				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/FSM/State/ThrowProjectileState_Corr_BP.uasset",
-				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/FSM/Transition/WaitProjKillTransition_Corr_BP.uasset"
+				"C:/Users/DOME3105/Documents/Unreal Projects/AIProject/Content/Blueprint/FSM/Transition/WaitProjKillTransition_Corr_BP.uasset",
+				"D:/Github/unreal2/AIProject/Content/Blueprint/Waypoint.uasset",
+				"D:/Github/unreal2/AIProject/Content/Levels/level.umap",
+				"D:/Github/unreal2/AIProject/Content/Blueprint/MathTester_BP.uasset"
 			]
 		}
 	]

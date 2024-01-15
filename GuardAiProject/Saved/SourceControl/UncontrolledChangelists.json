@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/DOME3105/Documents/Unreal Projects/GuardAiProject/Content/Levels/level.umap",
+				"C:/Users/DOME3105/Documents/Unreal Projects/GuardAiProject/Content/Blueprint/Waypoint_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/GuardAiProject/Content/Blueprint/Path_BP.uasset"
+			]
+		}
+	]
+}

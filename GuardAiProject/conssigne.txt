@@ -1,0 +1,9 @@
+Garde & Player:
+vue du dessus mais pas trop 
+
+
+Garde :
+- Paterns de ronde définie donc avec Path puis quand a la fin on part sur un reverse Path
+- Peut interrompre sa patrouille en voyant le joueur et vas le suivre:
+*sois il retourne la ou il était pour reppondre sa ronde
+*sois il prend le path le plus proche de lui (avec un Manager) f

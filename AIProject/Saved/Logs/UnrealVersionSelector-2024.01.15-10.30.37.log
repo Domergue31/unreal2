@@ -1,0 +1,17 @@
+Log started at 01/15/2024 10:30:38 (2024-01-15T09:30:38Z)
+No config file at C:\Users\DOME3105\Documents\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Configuration will be read from:
+  C:\Users\DOME3105\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Log file: D:\Github\unreal2\AIProject\Saved\Logs\UnrealVersionSelector-2024.01.15-10.30.37.log
+
+Setting temp directory to 'C:\Users\DOME3105\AppData\Local\Temp\UnrealBuildTool\f9512308'
+A conflicting instance of UnrealBuildTool is already running.
+BuildException: A conflicting instance of UnrealBuildTool is already running.
+   at UnrealBuildTool.SingleInstanceMutex..ctor(String MutexName, Boolean bWaitMutex) in D:\UE_5.3\Engine\Source\Programs\UnrealBuildTool\System\SingleInstanceMutex.cs:line 45
+   at UnrealBuildTool.UnrealBuildTool.Main(String[] ArgumentsArray) in D:\UE_5.3\Engine\Source\Programs\UnrealBuildTool\UnrealBuildTool.cs:line 624
+WriteFileIfChanged() wrote 0 changed files of 0 requested writes.
+Timeline:
+
+[ 0.000]
+[ 0.000](+0.952) <unknown>
+[ 0.952]
