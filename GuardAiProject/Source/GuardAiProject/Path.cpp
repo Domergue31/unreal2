@@ -2,6 +2,7 @@
 
 
 #include "Path.h"
+#include "GuardGameMode.h"
 
 APath::APath()
 {
@@ -11,6 +12,14 @@ APath::APath()
 #endif
 	icon = CreateDefaultSubobject<UBillboardComponent>("Icon");
 	RootComponent = icon;
+}
+
+void APath::BeginPlay()
+{
+	Super::BeginPlay();
+	AGuardGameMode* _gm = GetWorld()->GetAuthGameMode<AGuardGameMode>();
+	if (_gm)
+		_gm->GetPathManager()->Register(this);
 }
 
 void APath::Tick(float DeltaTime)
@@ -23,18 +32,22 @@ void APath::DrawPath()
 {
 	for (size_t i = 0; i < points.Num() - 1; i++)
 	{
-		if (!points[i] || !points[i + 1])
-		{
-			UE_LOG(LogTemp, Warning, TEXT("null"));
-			return;
-		}
+		if (!points[i] || !points[i + 1]) return;
 		DrawDebugLine(GetWorld(), points[i]->GetActorLocation(), points[i + 1]->GetActorLocation(), FColor::Yellow, false, -1, 0, 2);
 		DrawDebugSphere(GetWorld(), points[i]->GetActorLocation(), 25, 20, FColor::Magenta, false, -1, 0, 2);
 	}
-	//DrawDebugSphere(GetWorld(), points[points.Num() - 1]->GetActorLocation(), 25, 20, FColor::Magenta, false, -1, 0, 2);
+	if(points[points.Num() - 1])
+		DrawDebugSphere(GetWorld(), points[points.Num() - 1]->GetActorLocation(), 25, 20, FColor::Magenta, false, -1, 0, 2);
 }
 
 bool APath::ShouldTickIfViewportsOnly() const
 {
 	return false;
+}
+
+AWaypoint* APath::GetStartingPoint() const
+{
+	if (points.Num() == 0)
+		return nullptr;
+	return points[0];
 }

@@ -14,7 +14,12 @@ class GUARDAIPROJECT_API APath : public AActor
 	UPROPERTY(EditAnywhere) TArray<AWaypoint*> points = {};
 	UPROPERTY(EditAnywhere) TObjectPtr<UBillboardComponent> icon = nullptr;
 public:	
+	FORCEINLINE AWaypoint* GetAt(int _n) const { return points[_n]; }
+	FORCEINLINE int Count() const { return points.Num(); }
 	APath();
+	AWaypoint* GetStartingPoint() const;
+protected:
+	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
 	void DrawPath();
