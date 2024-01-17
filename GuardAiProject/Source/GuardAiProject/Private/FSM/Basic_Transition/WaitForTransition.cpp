@@ -6,7 +6,7 @@
 void UWaitForTransition::InitTransition(UFSMObject* _fsm)
 {
 	Super::InitTransition(_fsm);
-	GetWorld()->GetTimerManager().SetTimer(timer, this, &UWaitForTransition::Wait, time, false);
+	GetWorld()->GetTimerManager().SetTimer(timer, this, &UWaitForTransition::Wait, randomTime ? FMath::RandRange(minTime, maxTime) : time, false);
 }
 
 bool UWaitForTransition::IsValid()

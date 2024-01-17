@@ -13,6 +13,12 @@ UCLASS()
 class GUARDAIPROJECT_API AMainCharacter : public ACharacter
 {
 	GENERATED_BODY()
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMove, float, _axis);
+
+
+	UPROPERTY(BlueprintCallable, BlueprintAssignable, meta = (AllowPrivateAccess))
+	FOnMove onMove;
+
 
 	UPROPERTY(EditAnywhere) TObjectPtr<UCameraComponent> camera = nullptr;
 	UPROPERTY(EditAnywhere) TObjectPtr<USpringArmComponent> arm = nullptr;
@@ -30,7 +36,7 @@ class GUARDAIPROJECT_API AMainCharacter : public ACharacter
 
 public:
 	AMainCharacter();
-
+	FORCEINLINE FOnMove& OnMove() { return onMove; }
 protected:
 	void InitInput();
 	virtual void BeginPlay() override;

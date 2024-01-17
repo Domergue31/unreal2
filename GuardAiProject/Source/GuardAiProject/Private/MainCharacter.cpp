@@ -46,7 +46,8 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 void AMainCharacter::Move(const FInputActionValue& _value)
 {
 	float _axis = _value.Get<float>();
-	AddMovementInput(GetActorForwardVector(), _axis * moveSpeed);
+	AddMovementInput(GetActorForwardVector() * moveSpeed, _axis);
+	onMove.Broadcast(_axis);
 }
 
 void AMainCharacter::RotateYaw(const FInputActionValue& _value)

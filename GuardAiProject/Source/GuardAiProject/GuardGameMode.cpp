@@ -8,5 +8,7 @@ void AGuardGameMode::InitGame(const FString& MapName, const FString& Options, FS
 	Super::InitGame(MapName, Options, ErrorMessage);
 	if (pathManagerRef)
 		pathManager = NewObject<UPathManager>(this, pathManagerRef);
+	if (waypointManagerRef)
+		waypointManager = NewObject<UWaypointManager>(this, waypointManagerRef);
 }
 

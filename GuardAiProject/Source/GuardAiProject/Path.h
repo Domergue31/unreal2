@@ -16,6 +16,7 @@ class GUARDAIPROJECT_API APath : public AActor
 public:	
 	FORCEINLINE AWaypoint* GetAt(int _n) const { return points[_n]; }
 	FORCEINLINE int Count() const { return points.Num(); }
+	FORCEINLINE int IndexOf(AWaypoint* _point) const { return points.IndexOfByKey(_point); }
 	APath();
 	AWaypoint* GetStartingPoint() const;
 protected:

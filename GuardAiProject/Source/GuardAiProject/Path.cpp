@@ -20,6 +20,10 @@ void APath::BeginPlay()
 	AGuardGameMode* _gm = GetWorld()->GetAuthGameMode<AGuardGameMode>();
 	if (_gm)
 		_gm->GetPathManager()->Register(this);
+
+	points.Remove(nullptr);
+	for (size_t i = 0; i < points.Num(); i++)
+			points[i]->SetPath(this);
 }
 
 void APath::Tick(float DeltaTime)

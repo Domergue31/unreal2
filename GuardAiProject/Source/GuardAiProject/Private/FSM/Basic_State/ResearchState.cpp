@@ -16,11 +16,16 @@ void UResearchState::Enter(UFSMObject* _fsm)
 
 	AGuardGameMode* _gm = GetWorld()->GetAuthGameMode<AGuardGameMode>();
 	if (!_gm) return;
-	UPathManager* _manager = _gm->GetPathManager();
+	/*UPathManager* _manager = _gm->GetPathManager();
+	if (!_manager) return;*/
+	UWaypointManager* _manager = _gm->GetWaypointManager();
 	if (!_manager) return;
 
 	UPathRunnerComponent* _runner = _fsm->GetOwner()->GetOwner()->GetComponentByClass<UPathRunnerComponent>();
 	if (!_runner) return;
-	_runner->Restart();
-	_runner->SetCurrentPath(_manager->GetNearestPath(_fsm->GetOwner()->GetOwner()->GetActorLocation()));
+	AWaypoint* _point = _manager->GetNearestPoint(_fsm->GetOwner()->GetOwner()->GetActorLocation());
+	APath* _path = _point->GetPathOwner();
+	/*_runner->Restart();*/
+	_runner->SetIndex(_path->IndexOf(_point));
+	_runner->SetCurrentPath(_path);
 }

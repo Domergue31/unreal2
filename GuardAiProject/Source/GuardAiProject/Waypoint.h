@@ -12,6 +12,11 @@ class GUARDAIPROJECT_API AWaypoint : public AActor
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere) TObjectPtr<UBillboardComponent> icon = nullptr;
+	UPROPERTY(VisibleAnywhere) TObjectPtr<class APath> pathOwner = nullptr;
 public:	
 	AWaypoint();
+	FORCEINLINE void SetPath(APath* _path) { pathOwner = _path; }
+	FORCEINLINE TObjectPtr<APath> GetPathOwner() { return pathOwner; }
+protected:
+	virtual void BeginPlay() override;
 };

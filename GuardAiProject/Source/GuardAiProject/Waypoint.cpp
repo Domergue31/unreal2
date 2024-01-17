@@ -2,6 +2,7 @@
 
 
 #include "Waypoint.h"
+#include "GuardGameMode.h"
 
 AWaypoint::AWaypoint()
 {
@@ -9,5 +10,13 @@ AWaypoint::AWaypoint()
 	icon = CreateDefaultSubobject<UBillboardComponent>("Icon");
 	RootComponent = icon;
 
+}
+
+void AWaypoint::BeginPlay()
+{
+	Super::BeginPlay();	
+	AGuardGameMode* _gm = GetWorld()->GetAuthGameMode<AGuardGameMode>();
+	if (_gm)
+		_gm->GetWaypointManager()->Register(this);
 }
 

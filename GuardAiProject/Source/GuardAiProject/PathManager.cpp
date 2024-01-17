@@ -20,10 +20,9 @@ bool UPathManager::UnRegister(APath* _path)
 
 APath* UPathManager::GetNearestPath(FVector _pos)
 {
-	if (paths.Num() == 0)
-		return nullptr;
 	float _distance = 0;
 	APath* _tmp = nullptr;
+
 	for (APath* _path : paths)
 	{
 		AWaypoint* _waypoint = _path->GetStartingPoint();
@@ -33,6 +32,7 @@ APath* UPathManager::GetNearestPath(FVector _pos)
 			_tmp = _path;
 		}
 	}
+
 	return _tmp;
 	
 }

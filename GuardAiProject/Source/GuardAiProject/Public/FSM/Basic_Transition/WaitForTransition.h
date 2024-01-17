@@ -13,7 +13,14 @@ UCLASS()
 class GUARDAIPROJECT_API UWaitForTransition : public UTransition
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere, meta = (UMin = 1, ClampMin = 1, UMax = 20, CampMax = 20)) int time = 2;
+	UPROPERTY(EditAnywhere, meta = (UMin = 1, ClampMin = 1, UMax = 20, CampMax = 20, EditCondition = "!randomTime")) int time = 2;
+
+	UPROPERTY(EditAnywhere) bool randomTime = false;
+
+	UPROPERTY(EditAnywhere, meta = (UMin = 1, ClampMin = 1, UMax = 20, CampMax = 20, EditCondition = "randomTime")) int minTime = 2;
+	UPROPERTY(EditAnywhere, meta = (UMin = 1, ClampMin = 1, UMax = 20, CampMax = 20, EditCondition = "randomTime")) int maxTime = 6;
+
+
 
 	bool isDone = false;
 	FTimerHandle timer;

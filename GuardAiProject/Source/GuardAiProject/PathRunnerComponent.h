@@ -20,6 +20,7 @@ class GUARDAIPROJECT_API UPathRunnerComponent : public UActorComponent
 
 public:
 	FORCEINLINE void SetCurrentPath(APath* _path) { currentPath = _path; }
+	FORCEINLINE void SetIndex(int _index) { index = currentPath ? FMath::Clamp(_index, 0, currentPath->Count()) : 0; }
 	void Restart();
 	UPathRunnerComponent();
 	FVector GetPoint();
