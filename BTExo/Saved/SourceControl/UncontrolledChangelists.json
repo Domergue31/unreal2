@@ -1,0 +1,37 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/Levels/exoLvl.umap",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/DAA_Alien/MAT/MM_aliens.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/DAA_Alien/alien_cac_PhysicsAsset.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/DAA_Alien/alien_cac.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/DAA_Alien/alien_cac_Skeleton1.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/DAA_Alien/Anims/Alien_dance.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/DAA_Alien/Anims/Anim_alien_big_jump_end.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/DAA_Alien/Anims/Anim_alien_big_jump_middle.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BT/FindPointTask.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BP/Controller/CustomAIController_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BT/DrawDebugTask.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BT/PrintTextTask.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BT/SightConeDecor.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BP/Alien/Alien_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BT/AttackAlienCACBT.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BP/Alien/AlienCAC_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BT/Patrol/AlienPatrolBTBalcboard.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BT/Patrol/PatrolAlienBT.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BP/Projectile_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BT/AlienCACAttackBlacboard.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BT/AlienCACBlackboard.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BP/AlienCAC_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BT/PatrolAlienBT.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/AlienCAC_BP.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BT/AlienPatrolBTBalcboard.uasset",
+				"C:/Users/DOME3105/Documents/Unreal Projects/BTExo/Content/BT/AlienBT.uasset"
+			]
+		}
+	]
+}

@@ -1,0 +1,28 @@
+Behaviour tree:
+parfait pour décrire des comportement individuelle, determine l'execution de decision, le mieux est de le gardé le plus simple et le plus petit possible (on peut en faire plusieurs), mauvais pour les transitions et interuption
+
+-une structure de donnée de type arbre
+qui est acyclique c'est à dire dans un seul sens comparer a une FSM qui est cyclique 
+
+le noeuds du sommet sont appellé le root
+
+
+
+les 3 grands noeuds qu'on vas utilisé fréquament sont les noeugs gris:
+*on peut connecter autant de task que l'on veut ou de composite
+
+-le selector:
+*il vas lire tout ses enfant et il vas sortir dès que un des ses enfants réussi
+
+-le sequence:
+*il doit attendre que tout ses enfants ai réussis pour dire j'ai réussi 
+
+
+les décorator sont des conditions qui peuvent avoir plusieurs type, le plus utilisé sont les blackboard, 
+
+
+BlackBoards :
+permet d'avoir accés à nos variable dans tout le behaviourTree 
+le parametre instance synced dans une key permet que la variable sois connécté a toute les instance du blackboard
+
+Pour Utiliser un tree il faut au minimum un pawn
