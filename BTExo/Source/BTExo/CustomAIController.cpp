@@ -2,6 +2,8 @@
 
 
 #include "CustomAIController.h"
+#include "DrawDebugHelpers.h"
+#include "BehaviorTree/BlackboardComponent.h"
 
 ACustomAIController::ACustomAIController()
 {
@@ -17,12 +19,12 @@ void ACustomAIController::SetTree(UBehaviorTree* _tree)
 
 void ACustomAIController::Init()
 {
-	controlledCharacter = Cast<AAICharacter>(GetCharacter());
+	controlledCharacter = GetPawn();
 	if (!controlledCharacter) return;
 	bAttachToPawn = true;
-	AttachToPawn(controlledCharacter);
-	currentTree = controlledCharacter->GetTree();
+	//AttachToPawn(controlledCharacter);
 	RunBehaviorTree(currentTree);
+
 }
 
 void ACustomAIController::BeginPlay()
@@ -34,5 +36,29 @@ void ACustomAIController::BeginPlay()
 void ACustomAIController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	Debug();
+}
+
+void ACustomAIController::Debug()
+{
+	UBlackboardComponent* _bb = Blackboard.Get();
+	if (!_bb) return;
+	const FVector _location = _bb->GetValueAsVector(patrolLocKeyName);
+	DrawDebugSphere(GetWorld(), _location, 100, 12, FColor::Red, false, -1, 0, 2);
+}
+
+void ACustomAIController::ReceiveTarget(AActor* _target)
+{
+	Blackboard->SetValueAsObject(keyTarget, _target);
+}
+
+void ACustomAIController::ReceiveDetection(bool _detected)
+{
+	Blackboard->SetValueAsBool(keyDetected, _detected);
+}
+
+void ACustomAIController::ReceiveIsInRange(bool _value)
+{
+	Blackboard->SetValueAsBool(keyIsInRange, _value);
 }
 

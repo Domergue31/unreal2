@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "AIController.h"
 #include "AICharacter.h"
+#include "BehaviorTree/BehaviorTreeTypes.h"
 #include "CustomAIController.generated.h"
 
 /**
@@ -16,11 +17,25 @@ class BTEXO_API ACustomAIController : public AAIController
 	GENERATED_BODY()
 	
 protected:
-	UPROPERTY(VisibleAnywhere) TObjectPtr<UBehaviorTree> currentTree = nullptr;
-	UPROPERTY(VisibleAnywhere) TObjectPtr<AAICharacter> controlledCharacter = nullptr;
-
+	UPROPERTY(EditAnywhere) 
+	TObjectPtr<UBehaviorTree> currentTree = nullptr;
+	UPROPERTY(VisibleAnywhere) 
+	TObjectPtr<APawn> controlledCharacter = nullptr;
+	UPROPERTY(EditAnywhere) 
+	FName patrolLocKeyName = "patrolLocation";
+	UPROPERTY(EditAnywhere)
+	FBlackboardKeySelector debugKeySelector;
+	UPROPERTY(EditAnywhere)
+	FName keyTarget = "target";
+	UPROPERTY(EditAnywhere)
+	FName keyDetected = "targetDetected";
+	UPROPERTY(EditAnywhere)
+	FName keyIsInRange = "isInRange";
 
 public:
+	FORCEINLINE FName GetKeyTarget() const { return keyTarget; }
+	FORCEINLINE FName GetKeyDetected() const { return keyDetected; }
+	FORCEINLINE FName GetKeyIsInRange() const { return keyIsInRange; }
 	FORCEINLINE TObjectPtr<APawn> GetControlledPawn() { return controlledCharacter; }
 	FORCEINLINE TObjectPtr<UBehaviorTree> GetCurrentTree() { return currentTree; }
 	ACustomAIController();
@@ -30,5 +45,11 @@ protected:
 
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
+	void Debug();
+
+public:
+	UFUNCTION() void ReceiveTarget(AActor* _target);
+	UFUNCTION() void ReceiveDetection(bool _detected);
+	UFUNCTION() void ReceiveIsInRange(bool _value);
 
 };
