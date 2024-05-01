@@ -5,6 +5,9 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"C:/Users/thibd/OneDrive/Documents/GitHub/unreal2/RevisionProject/Content/Blueprint/UI/MainUI_BP.uasset",
+				"C:/Users/thibd/OneDrive/Documents/GitHub/unreal2/RevisionProject/Content/Blueprint/RevisionGameInstance_BP.uasset",
+				"C:/Users/thibd/OneDrive/Documents/GitHub/unreal2/RevisionProject/Content/Levels/level.umap",
 				"C:/Users/DOME3105/Documents/Unreal Projects/RevisionProject/Content/Levels/level.umap",
 				"C:/Users/DOME3105/Documents/Unreal Projects/RevisionProject/Content/Blueprint/GameMode/RevisionGameMode_BP.uasset",
 				"C:/Users/DOME3105/Documents/Unreal Projects/RevisionProject/Content/Blueprint/Player/MainPlayer_BP.uasset",
