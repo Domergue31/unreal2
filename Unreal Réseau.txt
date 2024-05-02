@@ -1,0 +1,116 @@
+Unreal Réseau:
+
+
+avoir steam d'installler si tu veux travailler avec steam
+
+BUG:
+si jamais un jour il y a un bug ou il vois pas le réseau c'est que steam n'es peut être pas lancé
+si quelque chose crash sur les client sauf sur 1 mec c'est que le mec en question est le serveur donc il y a un probleme
+si on travaille en groupe et que ça marche pas vérifier si on a le même subsystem (steam, null, ect...), il faut mettre a jour le mots clée dans le fichier
+pour tester en steam il faut obligatoirement au moins deux pc parecque il faut 2 comptes steam, on ne peut pas lancer plusieurs client sur une même machine
+sur P4V penser à vérifier le fichier dans config parecqu'il n'est pas push
+
+ 2 types de connection sever <=> client:
+
+1- les clients se connectent à un serveur 
+2- les clients sont aussi des serveurs , c'est a dire que le 1er client devient le serveur puis les autres se connecte à lui
+ 
+
+tout le bordel de gameMode, controller, gameinstance n'appartiennent pas au client mais au serveur => donc on ne pourras pas dévelloper comme d'habitude avec unreal
+
+si quelque chose bouge dans la partie elle bouge que dans le serveur, pour les clients rien ne bouge, c'est seulement si le serveur réplique se qu'il se passe au clients que ça bouge aussi pour eux,
+donc la seul perssone à avoir le controlle sur les actors c'est le serveur, il y a aussi d'autres type d'actors que l'on vas utiliser car plus pratique, ##IMPORTANT## de comuniquer avec le serveur
+
+
+-> variables sync
+->RPC (remote player control) => appellé localement mais pas executé chez lui mais sur le serveur, il y en a 3 types:
+	*Client => server qui appelle pour l'executer chez les clients
+	*Server => client qui appelle pour l'executer sur le server
+	*Multicast => appellé localement pour l'executer sur le server et chez les clients ##IMPORTANT## (il faut pas en abuser parceque c'est plus lourd que les autres, donc pas dans le tick)
+
+Reliable (fiable) => force le server a répondre dans l'ordre et a tout les ordres ( donc lourd ) / le chat doit être fiable | des tires en framerate de 1s peut êtres fiable
+UnReliable (non fiable) => peut se permettre de perdre des ordres en cours de route ( don moins lourd ) / en general c'est utiliser pour les movement des joueurs parecque c'est dans le tick et ça seras rafraichie 		 	   quoi qu'il arrive
+
+
+les question qu'il faut se poser quand tu fais quelque chose :
+-local ?
+-rep Var
+-RCP (3)
+
+
+à chaque action il faut vérifié si notre client n'est pas le server car sinon ça ne sert à rien de faire un RCP Server
+
+
+les objects qui sont chez le serveur:
+-GameMode
+
+les objects qui sont chez le server et chez chaque client individuellement (le clients peut demander au serveur que le sien pas celui des autres):
+-le Player Controller
+
+les Objects qui sont partagé entre le serveur et les clients ( le client 1 pourrait avoir accées au GameState du client 2 ils sont bloqué que à chaque client comme le "PlayerController"):
+-AGameState
+-APlayerState
+-APawn
+
+les Object qui sont que local:
+-l'UI
+-L'HUD
+
+
+OnlineSubsystem api d'unreal qui vas marché pour tout le monde ( steam, ect...)
+les classes SubSystem sont des classes singleton que l'on peut accéder de partout / on vas utiliser le GameSubSystem
+
+
+Web Socket 
+
+par default si le subsytem est en null ça démare en LAN
+
+La mise en place dans unreal:
+
+-aller dans plugins et taper "steam" puis activ" le online subsystem steam (si on travaille avec steam sinon prendre celui dont on a besoin)
+-dans le build.cs mettre "EnhancedInput", "OnlineSubsystem" et "OnlineSubsystemSteam"
+-aller dans "projects/Config/DefaultEngine.ini et on met :
+	[/Script/Engine.GameEngine]
+	+NetDriverDefinitions=(DefName="GameNetDriver",DriverClassName="OnlineSubsystemSteam.SteamNetDriver",DriverClassNameFallback="OnlineSubsystemUtils.IpNetDriver")
+
+	[OnlineSubsystem]
+	DefaultPlatformService=Steam
+
+	[OnlineSubsystemSteam]
+	bEnabled=true
+	SteamDevAppId=480
+	bInitServerOnClient=true
+
+	[/Script/OnlineSubsystemSteam.SteamNetDriver]
+	NetConnectionClassName="OnlineSubsystemSteam.SteamNetConnection"
+-dans les options de play => mettre le net Mode en "listen server" + mettre en standalone game pour bien faire la virtualisation avec steam ou null
+
+
+
+
+
+pour tester de lancer le projects en .exe avec un fichier .bat:
+-avoir fait les 4 premiere etape de la mise en place
+-créer un fichier .bat dans le dossier u projects "launch_as_STEAM.bat"
+-dans le fichier mettre en 1er ligne "[le path du UnrealEditor.exe dans (D:\UE_5.3\Engine\Binaries\Win64\UnrealEditor.exe)] [le path du projet .uproject] -game -ResX=960 -ResY=540 -log -WINDOWED"
+-puis double click dessus pour le lancer
+
+
+
+
+level blueprint pour affiché rapidement de l-ui pour test
+dans un blueprint de character pour qu'il sois repliqué on peut activé les variables replicate / replicate movement
+
+
+
+poutr faire un RPC il faut créer une function dans le .h déclarer comme ça :
+=> UFUNCTION(Client, Reliable, BlueprintCallable) void ClientRPC_Test();  / ClientRPC pour la nomanclature, Reliable pour si elle est fiable ou pas / Client pareceque c'est un RPC de type Client
+et dans le .cpp:
+	void ARPCTesterActor::ClientRPC_Test_Implementation()
+	{
+		LOG("Client RPC");
+	}
+// il ne faut pas faire confiance à son IDE et forcé la compil même si il te mette qu'il y a une erreur
+
+
+
