@@ -20,8 +20,6 @@ class REVISIONPROJECT_API AMainPlayer : public ACharacter
 	TObjectPtr<UCameraComponent> tpsCamera = nullptr;
 	UPROPERTY(EditAnywhere)
 	TObjectPtr<USpringArmComponent> arm = nullptr;
-	UPROPERTY(EditAnywhere)
-	TObjectPtr<ACustomCameraActor> cam ) nullptr;
 
 #pragma region Inputs
 	UPROPERTY(EditAnywhere, Category = "PlayerInputs")

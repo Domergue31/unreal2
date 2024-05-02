@@ -13,6 +13,7 @@ UCLASS()
 class SAVEEX_API UGameProgress : public USaveGame
 {
 	GENERATED_BODY()
+		TArray<int> test = {};
 		UPROPERTY(VisibleAnywhere)
 		int playerLife = 0;
 public:
