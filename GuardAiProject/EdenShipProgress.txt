@@ -1,0 +1,21 @@
+GPE:
+densité arbre
+
+spawn dans ui
+
+pendant génération du terrain éssayé de mettre unn pe d'herbe pour mieux rendre a la camera 
+
+CCC:
+control diagonal
+Camera plus proche
+
+
+
+UI:
+UI temp pas compris ou marche pas 
+image 4k
+
+
+
+CCC ou UI :
+quand on quit le toolMode il faut mettre à null le currentAction
