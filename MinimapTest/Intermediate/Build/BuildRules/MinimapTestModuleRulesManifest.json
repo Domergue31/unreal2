@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\Github\\unreal2\\MinimapTest\\Source\\MinimapTest\\MinimapTest.Build.cs",
+		"D:\\Github\\unreal2\\MinimapTest\\Source\\MinimapTest.Target.cs",
+		"D:\\Github\\unreal2\\MinimapTest\\Source\\MinimapTestEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}

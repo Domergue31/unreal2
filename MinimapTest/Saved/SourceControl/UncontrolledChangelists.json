@@ -1,0 +1,13 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/Github/unreal2/MinimapTest/Content/Levels/MainMenuLevel.umap",
+				"D:/Github/unreal2/MinimapTest/Content/Levels/GAme/Game.umap"
+			]
+		}
+	]
+}

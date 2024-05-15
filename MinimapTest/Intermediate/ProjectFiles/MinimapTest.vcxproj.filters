@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\MinimapTest.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\MinimapTest.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\MinimapTestEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\MinimapTest">
+      <UniqueIdentifier>{434D3EDD-6C6B-3308-A857-3AF1EE5E8319}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\MinimapTest\CustomWorldSettings.cpp">
+      <Filter>Source\MinimapTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MinimapTest\CustomWorldSettings.h">
+      <Filter>Source\MinimapTest</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MinimapTest\MiniMapCamera.cpp">
+      <Filter>Source\MinimapTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MinimapTest\MiniMapCamera.h">
+      <Filter>Source\MinimapTest</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\MinimapTest\MinimapTest.Build.cs">
+      <Filter>Source\MinimapTest</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\MinimapTest\MinimapTest.cpp">
+      <Filter>Source\MinimapTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MinimapTest\MinimapTest.h">
+      <Filter>Source\MinimapTest</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MinimapTest\MinimapTestCharacter.cpp">
+      <Filter>Source\MinimapTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MinimapTest\MinimapTestCharacter.h">
+      <Filter>Source\MinimapTest</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MinimapTest\MinimapTestGameMode.cpp">
+      <Filter>Source\MinimapTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MinimapTest\MinimapTestGameMode.h">
+      <Filter>Source\MinimapTest</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MinimapTest\OnlineManagerSubsystem.cpp">
+      <Filter>Source\MinimapTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MinimapTest\OnlineManagerSubsystem.h">
+      <Filter>Source\MinimapTest</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MinimapTest\RecordCamera.cpp">
+      <Filter>Source\MinimapTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MinimapTest\RecordCamera.h">
+      <Filter>Source\MinimapTest</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MinimapTest\RecordCameraManagerSubsystem.cpp">
+      <Filter>Source\MinimapTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MinimapTest\RecordCameraManagerSubsystem.h">
+      <Filter>Source\MinimapTest</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MinimapTest\StreamingSourceComponent.cpp">
+      <Filter>Source\MinimapTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MinimapTest\StreamingSourceComponent.h">
+      <Filter>Source\MinimapTest</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MinimapTest\StreamingSourceManager.cpp">
+      <Filter>Source\MinimapTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MinimapTest\StreamingSourceManager.h">
+      <Filter>Source\MinimapTest</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MinimapTest\StreamingSourceManagerSubsystem.cpp">
+      <Filter>Source\MinimapTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MinimapTest\StreamingSourceManagerSubsystem.h">
+      <Filter>Source\MinimapTest</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
